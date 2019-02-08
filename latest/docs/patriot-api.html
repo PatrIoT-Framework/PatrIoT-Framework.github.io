@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PatrIoT Framework Latest | API | PatrIOT API</title>
+
+  <!-- Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../latest/_images/favicon-32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../latest/_images/favicon.ico"><![endif]-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css" crossorigin="anonymous" integrity="sha384-zhIsEafzyQWHSoMCQ4BfT8ZlRXQyIFwAHAJn32PNdsb8n6tVysGZSLpEEIvCskw4">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js" crossorigin="anonymous" integrity="sha384-yDKe+FHcWYXuC4QP8bZULyLbkQWMpTkyk4v/fJi+7MwzWrT+SFIP5wFYQrWu5L+j"></script>
+  <script type='text/javascript'>
+      hljs.initHighlightingOnLoad();
+  </script>
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+	      <a class="navbar-brand" href="http://www.patriot-framework.io/">
+		      <img alt="PatrIoTFramefork" src="../../latest/_images/PATRIOT_logo_horizontal.svg" height="30">
+	      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#main">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../welcome/index.html">Documentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Get in Touch</a>
+            </li>
+        </ul></div>
+      </div>
+    </nav>	
+   <div class="container main-cont">
+    <p class="d-md-none toggle-nav pull-left">
+      <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb bg-white">
+      <li class="d-block d-md-none breadcrumb-item">
+        <h4 class="red-text">Documentation</h4>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item">
+        <a href="https://patriot-framework.io/docs">Home</a>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item">
+        <a href="../welcome/index.html">PatrIoT Framework Latest</a>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item active">
+        <a href="../docs/patriot-api.html">API</a>
+      </li>
+      
+      <li class="d-none d-md-block breadcrumb-item active">
+        PatrIOT API
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-5 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>PatrIoT Framework
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../welcome/index.html">Welcome</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Framework
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/framework.html">General information</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup2">
+        <span id="tgSpan2" class="fa fa-angle-down"></span>API
+      </a>
+      <ul id="topicGroup2" class="collapse show in list-unstyled">
+            <li><a class="active" href="../docs/patriot-api.html">PatrIOT API</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup3">
+        <span id="tgSpan3" class="fa fa-angle-right"></span>Data
+      </a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/data-generator.html">Data Generator</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>PatrIoT API</h2>
+        </div>
+        <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Patriot API is the core part of the framework, and it defines the means necessary for the
+testing to be effective as well as it brings the dependencies of upstream tools, and
+it also extends some parts of the JUnit framework, so it is possible to use it for integration
+testing.</p>
+</div>
+<div class="paragraph">
+<p>All packages of the PatrIoT framework are prefixed with <code>io.patriot_framework</code> which is the
+base namespace for the whole project, following package names, are stripped of this prefix</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>network.simulator.api</code> Base API for the network simulation. More about this topic in <a href="#network-simulator-api">[network-simulator-api]</a></p>
+</li>
+<li>
+<p><code>extensions</code> contains extensions for the JUnit framework, that enables features on top of existing
+JUnit Runner</p>
+</li>
+<li>
+<p><code>hub</code> provides the controlling interface over simulated network and data generators.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="the-test-scenario"><a class="anchor" href="#the-test-scenario"></a>The test scenario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In the realm of unit testing the test if mostly simple, the test needs to create some
+clean environment, set up the tested unit and sometimes mock some of the functionality, that is depending
+on some different component or unit. Hence most of the existing testing frameworks are aiming
+for this functionality, which brings some problems when such tools are being used for higher levels of testing. The biggest problem is the lack of common setup before test run, and complete isolation of tests, which is mostly accompanied by random execution of tests, that can&#8217;t be predicted or managed.</p>
+</div>
+<div class="paragraph">
+<p>On the other hand, integration tests mainly rely on the existence of the tested environment, that is
+set up before the Test Run starts and shut down (if needed) after the Test Run is done. Also, the requirement for the complete tests isolation is not entirely desirable since for many integration tests the setup is the same for several test cases and on many occasions, the tests are just stacked on themselves.</p>
+</div>
+<div class="sect2">
+<h3 id="junit-5"><a class="anchor" href="#junit-5"></a>JUnit 5</h3>
+<div class="paragraph">
+<p>The first thing, that will be described is how the tests are created in the JUnit its core concepts,
+this introduction will be brief and it will cover only very basics of the technology. For a more comprehensive description, please read <a href="https://junit.org/junit5/docs/current/user-guide/" class="bare">https://junit.org/junit5/docs/current/user-guide/</a> .</p>
+</div>
+<div class="paragraph">
+<p>The core component of JUnit framework is <code>Test</code> annotation, which defines a single test method, that is
+expected to execute simple Test Case and by assertions signal the Test Runner about the results as can be seen in <a href="#simple-test">Basic test using plain JUnit</a>.</p>
+</div>
+<div id="simple-test" class="listingblock">
+<div class="title">Basic test using plain JUnit</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">ArithmeticsTest</span> {
+
+    <span style="color:#007">@Test</span>
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> testAdd() {
+        assertEquals(<span style="color:#00D">1</span> + <span style="color:#00D">1</span>, <span style="color:#00D">2</span>);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Test Class is any top-level class, that contains at least one Test Method. For all test classes, there can be defined several special methods, that conducts the test preparation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>BeforeAll</code> annotated method is executed only once when the Test Class is instantiated and before the first Test Method is executed</p>
+</li>
+<li>
+<p><code>BeforeEach</code> annotated method is executed before every Test Method is started</p>
+</li>
+<li>
+<p><code>AfterAll</code> annotated method is executed after last Test Method is executed or skipped (i. e. in case of failure of the previous one)</p>
+</li>
+<li>
+<p><code>AfterEach</code> annotated method is executed directly after Test Method is executed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The tests can be generally be organized in the following order:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Test Suite</code> - composition of several Test Classes, that can be selected by various properties (e.g. by packages, tags or by listing the Test Classes directly)</p>
+</li>
+<li>
+<p><code>Test Class</code> - composition of test methods, that allows common setup for all Test Methods, ordered execution etc.</p>
+</li>
+<li>
+<p><code>Nested Test Class</code> - is Test Class that is implemented within a body of another Test Class.</p>
+</li>
+<li>
+<p><code>Test Method</code> - One single test case that is part of either Nested Test Class or Test Class.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="environment-setup"><a class="anchor" href="#environment-setup"></a>Environment setup</h3>
+<div class="paragraph">
+<p>The limitation of the JUnit for the environment preparation is commonly solved by extraction of the setup procedures outside the test process and their execution before the test procedure starts.
+This approach, however, brings many challenges, since the setup of the environment is typically set with
+its own set of properties and definitions, which then must be somehow brought to the testing environment.
+The solution is typically to use some common configuration format, that is passed from the setup
+process to the testing process, and by creating some common module, where the functionality for SUT access is stored.</p>
+</div>
+<div class="paragraph">
+<p>For this purpose, <code>Patriot-api</code> introduces abstract class <code>SetupExtension</code> to the JUnit framework. This extension is
+set to be executed only once, when the Test Run is started and can be used for various setup tasks,
+that need to be run once before the tests are conducted.</p>
+</div>
+<div class="paragraph">
+<p>SetupExtension contains four main abstract functions, that must be implemented in all child classes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>void setup()</code> This method is called once when the object is instantiated and is used to setup environment.</p>
+</li>
+<li>
+<p><code>void tearDown()</code> This method is called after all tests are finished to clean up and tear down the environment</p>
+</li>
+<li>
+<p><code>UUID getUUID()</code> This method is used to obtain a unique identifier, that will be stored in the JUnit registry</p>
+</li>
+<li>
+<p><code>boolean isSetup()</code> This method is called to check if the class method <code>setup</code> was already run.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To create your own SetupExtension, you need to create a new class, that is a child of SetupExtension and implements all the necessary methods.</p>
+</div>
+<div id="setup-class-instance" class="listingblock">
+<div class="title">Basic setup class</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">package</span> <span style="color:#707;font-weight:bold">test</span>;
+
+<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.patriot_framework.junit.extensions.SetupExtension</span>;
+<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">java.util.UUID</span>;
+
+<span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">BasicSetup</span> <span style="color:#088;font-weight:bold">extends</span> SetupExtension {
+
+    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#0a8;font-weight:bold">UUID</span> uuid = <span style="color:#0a8;font-weight:bold">UUID</span>.randomUUID();
+    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#339;font-weight:bold">boolean</span> configured = <span style="color:#069">false</span>;
+
+    <span style="color:#007">@Override</span>
+    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#339;font-weight:bold">boolean</span> isSetUp() {
+        <span style="color:#080;font-weight:bold">return</span> configured;
+    }
+
+    <span style="color:#007">@Override</span>
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> setUp() {
+        configured = <span style="color:#069">true</span>;
+        <span style="color:#777">//do the actual configuration</span>
+    }
+
+    <span style="color:#007">@Override</span>
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> tearDown() {
+        <span style="color:#777">//clean up</span>
+    }
+
+    <span style="color:#007">@Override</span>
+    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#0a8;font-weight:bold">UUID</span> getUUID() {
+        <span style="color:#080;font-weight:bold">return</span> uuid;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For the extension to be executed when tests are started is then needed one more step, the custom extension
+must be registered in the <code>META-INF/services/org.junit.jupiter.api.extension.Extension</code> by a fully qualified name, which means the whole name of the class with the package. In case of <a href="#setup-class-instance">Basic setup class</a> the file would look like shown in the snippet below.</p>
+</div>
+<div class="listingblock">
+<div class="title">META-INF/services/org.junit.jupiter.api.extension.Extension</div>
+<div class="content">
+<pre class="CodeRay highlight"><code>test.BasicSetup</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>META-INF</code> directory is in case of <code>maven</code> based project located relatively to the project root in directory <code>src/main/java/resources/META-INF</code>.</p>
+</div>
+<div class="paragraph">
+<p>In connection to other parts of the framework, there is extended abstract class <code>PatriotSetupExtension</code>, which is provided with the <code>PatriotHub</code> instance and contains protected method <code>getHub</code> as hub accessor. The <code>PatriotHub</code> is a singleton object which is accessible from whole test project and provides API for test environment setup and control. More about hub in <a href="#test-env-controll">[test-env-controll]</a>.</p>
+</div>
+<div id="simple-provisioner" class="listingblock">
+<div class="title">Provisioner for PatrIoT framework</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">package</span> <span style="color:#707;font-weight:bold">test</span>;
+
+<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.patriot_framework.junit.extensions.SetupExtension</span>;
+<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">java.util.UUID</span>;
+
+<span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">SimpleProvisioner</span> <span style="color:#088;font-weight:bold">extends</span> PatriotSetupExtension {
+
+    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#0a8;font-weight:bold">UUID</span> uuid = <span style="color:#0a8;font-weight:bold">UUID</span>.randomUUID();
+    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#339;font-weight:bold">boolean</span> configured = <span style="color:#069">false</span>;
+
+    <span style="color:#007">@Override</span>
+    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#339;font-weight:bold">boolean</span> isSetUp() {
+        <span style="color:#080;font-weight:bold">return</span> configured;
+    }
+
+    <span style="color:#007">@Override</span>
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> setUp() {
+        configured = <span style="color:#069">true</span>;
+        PatriotHub hub =
+    }
+
+    <span style="color:#007">@Override</span>
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> tearDown() {
+        <span style="color:#777">//clean up</span>
+    }
+
+    <span style="color:#007">@Override</span>
+    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#0a8;font-weight:bold">UUID</span> getUUID() {
+        <span style="color:#080;font-weight:bold">return</span> uuid;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conditional-execution"><a class="anchor" href="#conditional-execution"></a>Conditional execution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>JUnit implements several methods for conditional execution of Test cases. Every Test Class or Test Method can be annotated, in order to set under which conditions it should or shouldn&#8217;t be executed. Currently, supported conditions are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Based on the operating system</p>
+</li>
+<li>
+<p>Based on Java Runtime Environment condition</p>
+</li>
+<li>
+<p>Based on system properties</p>
+</li>
+<li>
+<p>Based on environment variables</p>
+</li>
+<li>
+<p>Or script based conditions</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nevertheless, for integration testing, it is desirable to have a condition based on results of prior Test Cases since it is common that when some integration test fails several others, that tests the same components will fail as well. The need to have the ability to skip some Test Cases is more necessary in case of time-consuming Test Cases.</p>
+</div>
+<div class="paragraph">
+<p>For this purpose PatrIoT framework implements another extension to the JUnit <code>ConditionalDisableExtension</code>. This extension is designed to allow the programmer to set if the test should be executed depending on the result of a particular test.
+For instance, assuming you have two Test Classes <code>ServiceIsUpAndRunningTest</code>
+and <code>ServiceCommunicatesWithApiTest</code>, then execution of second Test Class is unnecessary when the tests in the first one failed. Then you can use this feature</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage of ConditionalDisaledExtension</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#339;font-weight:bold">class</span>  <span style="color:#B06;font-weight:bold">ServiceIsUpAndRunningTest</span>{
+
+    <span style="color:#007">@Test</span>
+    <span style="color:#339;font-weight:bold">void</span> testServiceIsUp() {
+        <span style="color:#777">// some connection</span>
+    }
+}
+
+<span style="color:#007">@DisableByState</span>(ServiceIsUpAndRunningTest.class, TestResultState.FAILED)
+<span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">ServiceCommunicatesWithApiTest</span> {
+
+    <span style="color:#007">@Test</span>
+    <span style="color:#339;font-weight:bold">void</span> testThatAPIReadsService() {
+        <span style="color:#777">//test the API</span>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The code above will execute <code>ServiceIsUpAndRunningTest</code>, but if some of it&#8217;s Test Methods will end
+with the state <code>FAILED</code>, then <code>ConditionalDisaledExtension</code> will prevent Test Class <code>ServiceCommunicatesWithApiTest</code>
+from execution.</p>
+</div>
+<div class="paragraph">
+<p>As with the previous Extension, you need to register the extension within <code>META-INF</code> package on your classpath.</p>
+</div>
+<div class="listingblock">
+<div class="title">META-INF/services/org.junit.jupiter.api.extension.Extension</div>
+<div class="content">
+<pre class="CodeRay highlight"><code>io.patriot_framework.junit.extensions.ConditionalDisableExtension</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="test-environment-control"><a class="anchor" href="#test-environment-control"></a>Test environment control</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the specified components of the framework is <code>Hub</code>, which is responsible for conducting actions on the life
+System Under Test.  The Hub component is implemented by singleton class <code>PatriotHub</code> and currently supports both,
+setup of the simulated environment as well as the creation of ad-hoc changes on the Simulated Network.
+<code>PatriotHub</code> also provides access to the <code>Devices</code> from <code>patriot-sensor-generator</code> module.
+For network manipulation, there are two main points of access:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>AppManager</code> controls deployment of containers into a simulated environment</p>
+</li>
+<li>
+<p><code>NetworkManager</code> controls Network Topology setup and interconnection of networks via Routers</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both objects are held by the PatriotHub, and both are accessible as singletons to for the Test Methods so that they
+can be used anywhere within Test Run Lifecycle. As demonstrated by <a href="#simple-provisioner">Provisioner for PatrIoT framework</a> the PatriotHub can be accessed
+as soon as the Test Runner starts, before any test is executed.</p>
+</div>
+<div class="paragraph">
+<p>The only thing necessary for PatriotHub for proper function is a property that defines name and tag of the <code>Router</code>
+that is expected to be used within the simulated environment - without such property, PatriotHub will fail with
+<code>PropertiesNotLoadedException</code>. To set such a property user has two options</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Create a properties file</dt>
+<dd>
+<p>Properties file should be named <code>patriot.properties</code> and should be loaded on the classpath and will contain <code>io.patriot_framework.router</code> key.
+For maven test projects, default place where the properties should be stored is relative to the project root is <code>src/test/resources/</code> so the full path would be
+<code>src/test/resources/patriot.properties</code></p>
+</dd>
+<dt class="hdlist1">Set system property</dt>
+<dd>
+<p>System property should be named <code>io.patriot_framework.router</code>. Such property can be either from a command line or by modifying project definition in <code>pom.xml</code>.
+Property is passed via command line if the java process obtains following switch <code>-Dio.patriot_framework.router=${VALUE}</code>. This can be done
+with plain java command by <code>java -jar ${your_test_jar} -Dio.patriot_framework.router=${ROUTER}</code> as well as with maven <code>mvn test -Dio.patriot_framework.router=${ROUTER}</code>
+Another option would be by modification of the <code>pom.xml</code> file, that defines your testing project, you can simply add following <code>&lt;properties&gt;&lt;io.patriot_framework.router&gt;VALUE&lt;/io.patriot_framework.router&gt;</code>
+anywhere within <code>&lt;project&gt;</code> tags (but not nested).</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reporting-and-monitoring"><a class="anchor" href="#reporting-and-monitoring"></a>Reporting and monitoring</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Reporting is currently done by default JUnit reporter because in the current state, the Patriot Framework doesn&#8217;t need to report anything special
+however, for future releases is such support expected and even developed on experimental branches of development version.
+Since Patriot Framework is developed using <code>maven</code> as build and dependency management tool, the best way to set up correct reporting and
+test execution is by using <code>maven-surefire-plugin</code>, which is default provider of test execution lifecycle phase for <code>maven</code>. JUnit is well
+integrated with surefire plugin, and test results are presented in the xUnit XML test report format, which is currently one of the most
+use due to the possibility of machine processing.</p>
+</div>
+<div class="sect2">
+<h3 id="monitoring"><a class="anchor" href="#monitoring"></a>Monitoring</h3>
+<div class="paragraph">
+<p>Monitoring for the Patriot Framework is currently implemented by setting API endpoint for <a href="https://www.elastic.co/guide/index.html">Elasticsearch</a> database to the
+Patriot environment.
+Elasticsearch database is currently one of the most used databases for Log aggregation tools, like EFK stack (Elasticsearch Fluentd and Kibana) in
+containerized clusters and ELK stack (Elasticsearch Logstash and Kibana) for real and virtual servers.</p>
+</div>
+<div class="paragraph">
+<p>In the case of Patriot Framework, usage of Elasticsearch is aimed to collect dynamic data from the System Under Test rather than for test logs collection.
+Currently, are reported following events:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Creation of a network</p>
+</li>
+<li>
+<p>Deletion of network</p>
+</li>
+<li>
+<p>Connection of router to the Network</p>
+</li>
+<li>
+<p>Disconnection of a router from the Network</p>
+</li>
+<li>
+<p>Connection of application to network</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All of those events can be then searched in the Elasticsearch database, or visualized by <a href="https://www.elastic.co/guide/en/kibana/current/introduction.html">Kibana</a>, which is analytics and
+visualization platform based on top of Elasticsearch.
+To set up the Elasticsearch the simpliest way is to run Docker container, which has several advantages</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deployment is easy and doesn&#8217;t need basically any special configuration</p>
+</li>
+<li>
+<p>In combination with the Simulated Network, Elasticsearch will be part of the Simulated Environment</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="set-up-elasticsearch"><a class="anchor" href="#set-up-elasticsearch"></a>Set up Elasticsearch</h4>
+<div class="paragraph">
+<p>To obtain Elasticsearch for deployment into Docker container platform it is enough to use following command</p>
+</div>
+<div class="listingblock">
+<div class="title">Pull Elasticsearch image</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">docker pull docker.elastic.co/elasticsearch/elasticsearch:6.5.4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the pull is complete, the container can be started by following command, which creates new Docker container and starts services
+defined by images, in this case it will start Elasticsearch database.</p>
+</div>
+<div class="listingblock">
+<div class="title">Start Elasticsearch container</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">docker run -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; docker.elastic.co/elasticsearch/elasticsearch:6.5.4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command will do the following steps</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It will expose port 9200 of the container to the host port 9200, the port 9200 will be open on localhost of the machine itself</p>
+</li>
+<li>
+<p>It will expose port 9300 of the container to the host port 9300, which has the same behavior as above</p>
+</li>
+<li>
+<p>Sets discovery environment variable to value <code>discovery.type=single-node</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The reporting for the Patriot Framework components is then enabled by setting Property <code>io.patriot_framework.monitoring.addr</code> which is a combination of
+The IP address of running instance of Elasticsearch and port for API access (by default it is 9200). Because of the docker deployment
+option, in this case, it is necessary to use the IP address of Elasticsearch instead of localhost, because the monitoring entries will be delivered
+to Elasticsearch from the Docker platform. The IP address of running container can be obtained by running following command</p>
+</div>
+<div class="listingblock">
+<div class="title">Obtain Container IP address</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${NAME_OF_ELASTIC_CONTAINER}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">patriot.properties</div>
+<div class="content">
+<pre class="CodeRay highlight"><code>io.patriot_framework.monitoring.addr=192.168.12.12:9200</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   <script src="../../latest/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+   <script type="text/javascript">
+       /*<![CDATA[*/
+       $(document).ready(function() {
+           $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+               if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+                   $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+               }
+           });
+           $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+               if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+                   $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+               }
+           });
+           $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+               $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+           });
+           $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+               $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+           });
+       });
+       /*]]>*/
+   </script>
+</body>
+</html>
