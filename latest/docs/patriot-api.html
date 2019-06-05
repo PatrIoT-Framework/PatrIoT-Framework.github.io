@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>PatrIoT Framework Latest | API | PatrIOT API</title>
+  <title>PatrIoT Framework Latest | Framework Base | PatrIoT API</title>
 
   <!-- Bootstrap -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -67,11 +67,11 @@
         <a href="../welcome/index.html">PatrIoT Framework Latest</a>
       </li>
       <li class="d-none d-md-block breadcrumb-item active">
-        <a href="../docs/patriot-api.html">API</a>
+        <a href="../docs/framework.html">Framework Base</a>
       </li>
       
       <li class="d-none d-md-block breadcrumb-item active">
-        PatrIOT API
+        PatrIoT API
       </li>
     </ol>
     <div class="row row-offcanvas row-offcanvas-left">
@@ -87,23 +87,24 @@
     </li>
     <li class="nav-header">
       <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup1">
-        <span id="tgSpan1" class="fa fa-angle-right"></span>Framework
+        <span id="tgSpan1" class="fa fa-angle-down"></span>Framework Base
       </a>
-      <ul id="topicGroup1" class="collapse  list-unstyled">
+      <ul id="topicGroup1" class="collapse show in list-unstyled">
             <li><a class="" href="../docs/framework.html">General information</a></li>
+            <li><a class="active" href="../docs/patriot-api.html">PatrIoT API</a></li>
       </ul>
     </li>
     <li class="nav-header">
       <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup2">
-        <span id="tgSpan2" class="fa fa-angle-down"></span>API
+        <span id="tgSpan2" class="fa fa-angle-right"></span>Network Simulation
       </a>
-      <ul id="topicGroup2" class="collapse show in list-unstyled">
-            <li><a class="active" href="../docs/patriot-api.html">PatrIOT API</a></li>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/network-sim.html">Network simulation</a></li>
       </ul>
     </li>
     <li class="nav-header">
       <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup3">
-        <span id="tgSpan3" class="fa fa-angle-right"></span>Data
+        <span id="tgSpan3" class="fa fa-angle-right"></span>Data Generation
       </a>
       <ul id="topicGroup3" class="collapse  list-unstyled">
             <li><a class="" href="../docs/data-generator.html">Data Generator</a></li>
@@ -115,7 +116,26 @@
         <div class="page-header">
           <h2>PatrIoT API</h2>
         </div>
-        <div id="preamble">
+        <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#the-test-scenario">The test scenario</a>
+<ul class="sectlevel2">
+<li><a href="#junit-5">JUnit 5</a></li>
+<li><a href="#environment-setup">Environment setup</a></li>
+</ul>
+</li>
+<li><a href="#conditional-execution">Conditional execution</a></li>
+<li><a href="#test-environment-control">Test environment control</a></li>
+<li><a href="#reporting-and-monitoring">Reporting and monitoring</a>
+<ul class="sectlevel2">
+<li><a href="#monitoring">Monitoring</a></li>
+<li><a href="#set-up-elasticsearch">Set up Elasticsearch</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Patriot API is the core part of the framework, and it defines the means necessary for the
@@ -478,68 +498,250 @@ use due to the possibility of machine processing.</p>
 <div class="sect2">
 <h3 id="monitoring"><a class="anchor" href="#monitoring"></a>Monitoring</h3>
 <div class="paragraph">
-<p>Monitoring for the Patriot Framework is currently implemented by setting API endpoint for <a href="https://www.elastic.co/guide/index.html">Elasticsearch</a> database to the
+<p>Monitoring for the Patriot Framework is currently implemented by setting Logstash or Graylog address into containers log parameter.</p>
+</div>
+<div class="paragraph">
+<p>API endpoint for <a href="https://www.elastic.co/guide/index.html">Elasticsearch</a> database to the
 Patriot environment.
 Elasticsearch database is currently one of the most used databases for Log aggregation tools, like EFK stack (Elasticsearch Fluentd and Kibana) in
 containerized clusters and ELK stack (Elasticsearch Logstash and Kibana) for real and virtual servers.</p>
 </div>
 <div class="paragraph">
-<p>In the case of Patriot Framework, usage of Elasticsearch is aimed to collect dynamic data from the System Under Test rather than for test logs collection.
-Currently, are reported following events:</p>
+<p>In the case of Patriot Framework, usage of centralized monitoring is aimed to collect all data from the System Under Test rather than for test logs collection.
+Currently, are reported all events from simulated environment logged to stdout or stderr, for example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Creation of a network</p>
+<p>Changes in routing tables</p>
 </li>
 <li>
-<p>Deletion of network</p>
+<p>Default gateways</p>
 </li>
 <li>
-<p>Connection of router to the Network</p>
+<p>IPTables restriction</p>
 </li>
 <li>
-<p>Disconnection of a router from the Network</p>
+<p>Sensor information</p>
 </li>
 <li>
-<p>Connection of application to network</p>
+<p>Application output</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p>All of those events can be then searched in the Elasticsearch database, or visualized by <a href="https://www.elastic.co/guide/en/kibana/current/introduction.html">Kibana</a>, which is analytics and
-visualization platform based on top of Elasticsearch.
-To set up the Elasticsearch the simpliest way is to run Docker container, which has several advantages</p>
+visualization platform based on top of Elasticsearch. Configuration of GELF input in logstash and graylog is requirement, otherwise log will not be readable or even collected.
+To set up the Elasticsearch the simplest way is to run Docker compose, which has several advantages:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Deployment is easy and doesn&#8217;t need basically any special configuration</p>
+<p>Deployment is easy and environment is fully configurable</p>
+</li>
+<li>
+<p>Configuration of GELF input is very easy</p>
 </li>
 <li>
 <p>In combination with the Simulated Network, Elasticsearch will be part of the Simulated Environment</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect2">
+<h3 id="set-up-elasticsearch"><a class="anchor" href="#set-up-elasticsearch"></a>Set up Elasticsearch</h3>
 <div class="sect3">
-<h4 id="set-up-elasticsearch"><a class="anchor" href="#set-up-elasticsearch"></a>Set up Elasticsearch</h4>
+<h4 id="graylog-stack"><a class="anchor" href="#graylog-stack"></a>Graylog stack</h4>
+<div class="paragraph">
+<p>Graylog stack is built from 3 parts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Graylog node for user interface</p>
+</li>
+<li>
+<p>Elasticsearch node for data stash</p>
+</li>
+<li>
+<p>MongoDB for metadata</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Graylog supports multiple log formats and inputs. GELF log format is natively supported by Graylog.
+Best way how to deploy Graylog stack is via docker-compose. First step of deployment process is installation of docker-compose.</p>
+</div>
+<div class="listingblock">
+<div class="title">Install docker-compose</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker-compose --version</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next step is to create docker-compose yaml file which will describe deployment of our stack. For security reasons please change
+administration and user password to Graylog node.</p>
+</div>
+<div class="listingblock">
+<div class="title">Docker-compose.yml</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">version</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'2'</span></span>
+<span style="color:#606">services</span>:
+  <span style="color:#777"># MongoDB: https://hub.docker.com/_/mongo/</span>
+  <span style="color:#606">mongodb</span>:
+    <span style="color:#606">image</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">mongo:3</span></span>
+  <span style="color:#777"># Elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docker.html</span>
+  <span style="color:#606">elasticsearch</span>:
+    <span style="color:#606">image</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">docker.elastic.co/elasticsearch/elasticsearch:5.6.3</span></span>
+    <span style="color:#606">environment</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">http.host=0.0.0.0</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">transport.host=localhost</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">network.host=0.0.0.0</span></span>
+      <span style="color:#777"># Disable X-Pack security: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/security-settings.html#general-security-settings</span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">xpack.security.enabled=false</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ES_JAVA_OPTS=-Xms512m -Xmx512m</span><span style="color:#710">&quot;</span></span>
+    <span style="color:#606">ports</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">9200:9200</span></span>
+    <span style="color:#606">ulimits</span>:
+      <span style="color:#606">memlock</span>:
+        <span style="color:#606">soft</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">-1</span></span>
+        <span style="color:#606">hard</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">-1</span></span>
+    <span style="color:#606">mem_limit</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">1g</span></span>
+  <span style="color:#777"># Graylog: https://hub.docker.com/r/graylog/graylog/</span>
+  <span style="color:#606">graylog</span>:
+    <span style="color:#606">image</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">graylog/graylog:2.4.0-1</span></span>
+    <span style="color:#606">environment</span>:
+      <span style="color:#777"># CHANGE ME!</span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">GRAYLOG_PASSWORD_SECRET=somepasswordpepper</span></span>
+      <span style="color:#777"># Password: admin</span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">GRAYLOG_WEB_ENDPOINT_URI=http://127.0.0.1:9000/api</span></span>
+    <span style="color:#606">links</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">mongodb:mongo</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">elasticsearch</span></span>
+    <span style="color:#606">depends_on</span>:
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">mongodb</span></span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">elasticsearch</span></span>
+    <span style="color:#606">ports</span>:
+      <span style="color:#777"># Graylog web interface and REST API</span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">9000:9000</span></span>
+      <span style="color:#777"># Syslog TCP</span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">514:514</span></span>
+      <span style="color:#777"># Syslog UDP</span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">514:514/udp</span></span>
+      <span style="color:#777"># GELF TCP</span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">12201:12201</span></span>
+      <span style="color:#777"># GELF UDP</span>
+      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">12201:12201/udp</span></span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This compose file describes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Exposed ports</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Port 9000 of the container to the host port 9000, the port 9000 will be open on localhost of the machine itself. Port is used for Graylog user interface</p>
+</li>
+<li>
+<p>Port 514 of the container to the host port 514, the port 514 will be open on localhost of the machine itself. Port is used for tcp syslog log pipe.</p>
+</li>
+<li>
+<p>Port 514 of the container to the host port 514/udp, the port 514/udp will be open on localhost of the machine itself. Port is used for udp syslog log pipe.</p>
+</li>
+<li>
+<p>Port 9200 of the container to the host port 9200, the port 9200 will be open on localhost of the machine itself. Port is used for Elasticsearch</p>
+</li>
+<li>
+<p>Port 12201 of the container to the host port 12201tcp/udp, the port 12201tcp/udp will be open on localhost of the machine itself. Port is used for GELF input.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Last step of deployment process is to start compose. For this step you have to be in same folder where is located your docker-compose file</p>
+</div>
+<div class="listingblock">
+<div class="title">Start compose</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">docker-compose up</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Whole stack can be after work removed with simple command</p>
+</div>
+<div class="listingblock">
+<div class="title">Remove stack</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">docker-compose down</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="logstash-stack"><a class="anchor" href="#logstash-stack"></a>Logstash stack</h4>
 <div class="paragraph">
 <p>To obtain Elasticsearch for deployment into Docker container platform it is enough to use following command</p>
 </div>
 <div class="listingblock">
 <div class="title">Pull Elasticsearch image</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker pull docker.elastic.co/elasticsearch/elasticsearch:6.5.4</code></pre>
+<pre class="CodeRay highlight"><code data-lang="shell">docker pull sebp/elk:latest</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>After the pull is complete, the container can be started by following command, which creates new Docker container and starts services
-defined by images, in this case it will start Elasticsearch database.</p>
+<p>After the pull is complete, we have to create configuration file for logstash, because we need to specify gelf input port.
+But first create empty directory for our configuration file.</p>
+</div>
+<div class="listingblock">
+<div class="title">Create empty directory</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">mkdir logstash</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Create logstash.conf for logstash</div>
+<div class="content">
+<pre class="CodeRay highlight"><code>input {
+    gelf {
+        port =&gt; 12201
+        type =&gt; gelf
+    }
+}
+output {
+  elasticsearch {
+    hosts =&gt; ["http://localhost:9200"]
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we are ready to create Dockerfile, which will deliver our configuration file to it`s place and install gelf-input plugin.
+Dockerfile should be located in same directory as configuration file.</p>
 </div>
 <div class="listingblock">
 <div class="title">Start Elasticsearch container</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker run -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; docker.elastic.co/elasticsearch/elasticsearch:6.5.4</code></pre>
+<pre class="CodeRay highlight"><code data-lang="dockerfile">FROM sebp/elk
+ADD logstash.conf /etc/logstash/conf.d/30-output.conf
+
+WORKDIR ${LOGSTASH_HOME}
+RUN gosu logstash bin/logstash-plugin install logstash-input-gelf</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Start Elasticsearch container</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="shell">docker build -t elastic-gelf CONFIGURATION_DIR
+docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -p 12201:12201/udp -it --name elk elastic-gelf</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -548,32 +750,38 @@ defined by images, in this case it will start Elasticsearch database.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>It will expose port 9200 of the container to the host port 9200, the port 9200 will be open on localhost of the machine itself</p>
+<p>It will build our elk container image with created configuration</p>
 </li>
 <li>
-<p>It will expose port 9300 of the container to the host port 9300, which has the same behavior as above</p>
+<p>It will expose port 5601 of the container to the host port 5601, the port 5601 will be open on localhost of the machine itself. Port is used for Kibana</p>
 </li>
 <li>
-<p>Sets discovery environment variable to value <code>discovery.type=single-node</code></p>
+<p>It will expose port 9200 of the container to the host port 9200, the port 9200 will be open on localhost of the machine itself. Port is used for Elasticsearch</p>
+</li>
+<li>
+<p>It will expose port 5044 of the container to the host port 5044, the port 5044 will be open on localhost of the machine itself. Port is used for Logstash</p>
+</li>
+<li>
+<p>It will expose port 12201 of the container to the host port 12201/udp, the port 12201 will be open on localhost of the machine itself. Port is used for Logstash gelf udp input</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The reporting for the Patriot Framework components is then enabled by setting Property <code>io.patriot_framework.monitoring.addr</code> which is a combination of
-The IP address of running instance of Elasticsearch and port for API access (by default it is 9200). Because of the docker deployment
-option, in this case, it is necessary to use the IP address of Elasticsearch instead of localhost, because the monitoring entries will be delivered
-to Elasticsearch from the Docker platform. The IP address of running container can be obtained by running following command</p>
+<p>The reporting for the Patriot Framework components is then enabled by setting Property <code>io.patriot_framework.monitoring.addr</code> which is IPv4 address of logstash.
+Because of the docker deployment option, in this case, it is necessary to use the IP address of Logstash instead of localhost, because the monitoring entries will be delivered
+to Elasticsearch from the Docker platform. The IP address of running container can be obtained by running following command.</p>
 </div>
 <div class="listingblock">
 <div class="title">Obtain Container IP address</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${NAME_OF_ELASTIC_CONTAINER}</code></pre>
+<pre class="CodeRay highlight"><code data-lang="shell">docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${NAME_OF_ELASTIC_STACK}</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">patriot.properties</div>
 <div class="content">
-<pre class="CodeRay highlight"><code>io.patriot_framework.monitoring.addr=192.168.12.12:9200</code></pre>
+<pre class="CodeRay highlight"><code>io.patriot_framework.monitoring.addr=192.168.12.12
+io.patriot_framework.monitoring.port=12201</code></pre>
 </div>
 </div>
 </div>

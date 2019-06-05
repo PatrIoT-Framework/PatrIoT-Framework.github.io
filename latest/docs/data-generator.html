@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>PatrIoT Framework Latest | Data | Data Generator</title>
+  <title>PatrIoT Framework Latest | Data Generation | Data Generator</title>
 
   <!-- Bootstrap -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -67,7 +67,7 @@
         <a href="../welcome/index.html">PatrIoT Framework Latest</a>
       </li>
       <li class="d-none d-md-block breadcrumb-item active">
-        <a href="../docs/data-generator.html">Data</a>
+        <a href="../docs/data-generator.html">Data Generation</a>
       </li>
       
       <li class="d-none d-md-block breadcrumb-item active">
@@ -87,23 +87,24 @@
     </li>
     <li class="nav-header">
       <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup1">
-        <span id="tgSpan1" class="fa fa-angle-right"></span>Framework
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Framework Base
       </a>
       <ul id="topicGroup1" class="collapse  list-unstyled">
             <li><a class="" href="../docs/framework.html">General information</a></li>
+            <li><a class="" href="../docs/patriot-api.html">PatrIoT API</a></li>
       </ul>
     </li>
     <li class="nav-header">
       <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup2">
-        <span id="tgSpan2" class="fa fa-angle-right"></span>API
+        <span id="tgSpan2" class="fa fa-angle-right"></span>Network Simulation
       </a>
       <ul id="topicGroup2" class="collapse  list-unstyled">
-            <li><a class="" href="../docs/patriot-api.html">PatrIOT API</a></li>
+            <li><a class="" href="../docs/network-sim.html">Network simulation</a></li>
       </ul>
     </li>
     <li class="nav-header">
       <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup3">
-        <span id="tgSpan3" class="fa fa-angle-down"></span>Data
+        <span id="tgSpan3" class="fa fa-angle-down"></span>Data Generation
       </a>
       <ul id="topicGroup3" class="collapse show in list-unstyled">
             <li><a class="active" href="../docs/data-generator.html">Data Generator</a></li>
@@ -115,7 +116,19 @@
         <div class="page-header">
           <h2>Data generator</h2>
         </div>
-        <div class="sect1">
+        <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#description">Description</a></li>
+<li><a href="#functionality">Functionality</a></li>
+<li><a href="#usage">Usage</a>
+<ul class="sectlevel2">
+<li><a href="#simple-example-device-with-data-on-pooling">Simple example - device with data on pooling</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
 <h2 id="description"><a class="anchor" href="#description"></a>Description</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -129,9 +142,9 @@
 This allows the user to get data on demand with custom parameters.
 The number and types of parameters for this method depends mostly on the DataFeed implementation provided for the Device.</p>
 </dd>
-<dt class="hdlist1">Wrapping <code>Device</code> with <code>TimeSimulation</code></dt>
+<dt class="hdlist1">Wrapping <code>Device</code> with <code>ActiveDevice</code></dt>
 <dd>
-<p>In this case the <code>requestData()</code> method is called periodically by <code>TimeSimulation</code> and it can be used as a standalone device.</p>
+<p>In this case the <code>requestData()</code> method is called periodically by <code>ActiveDevice</code> and it can be used as a standalone device.</p>
 </dd>
 </dl>
 </div>
@@ -152,22 +165,34 @@ For information on deploying</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>There are 2 main types of <code>Device</code>.</p>
+<p>Users can utilize three main data generators types:</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Sensor</dt>
 <dd>
-<p>A simple device that contains and performs operations on a single <code>DataFeed</code>.</p>
+<p>interface adds possibility to define List of <code>DataFeed</code> to <code>Device</code>. This provides possibility to simulate
+data generation for multiple data sources. For example commonly known DHT11 temperature-humidity sensor is working with
+two values simultaneously. This requires possibility to define multiple DataFeeds for one device.</p>
 </dd>
-<dt class="hdlist1">Composition</dt>
+<dt class="hdlist1">SimpleSensor</dt>
 <dd>
-<p>Solves a problem, that not all devices are sources of just one type of data. For example commonly known DHT11 temperature-humidity sensor is working with two values simultaneously. This requires possibility to define multiple DataFeeds for one device</p>
+<p>extends <code>Sensor</code> and restrict its functionality to use only one <code>DataFeed</code> as it is convenient
+to sometimes utilize sensor that is monitoring only one value.</p>
+</dd>
+<dt class="hdlist1">Actuator</dt>
+<dd>
+<p>different type of <code>Device</code> than <code>Sensor</code>. Offers methods to simulate real life behaviour of actuators.
+Important part of this concept is <code>StateMachine.class</code> which holds information about current state and time duration,
+that is needed for actuator to finish simulated action. Handles any transitions between states if necessary.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
 <p>The library provides few preconfigured devices that are ready for use. The idea behind them is to simplify the creation process for the user in case he wants to create commonly known devices but to offer him freedom in configuring his own.</p>
+</div>
+<div class="paragraph">
+<p>Sensors:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -181,10 +206,20 @@ For information on deploying</p>
 <p>Thermometer</p>
 </li>
 <li>
-<p>DefaultComposition</p>
+<p>DHT11</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Actuators:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>LinearActuator</p>
 </li>
 <li>
-<p>DHT11</p>
+<p>RotaryActuator</p>
 </li>
 </ul>
 </div>
@@ -208,9 +243,9 @@ Expression approach, where a user defines an expression (function) which solutio
 </dd>
 <dt class="hdlist1">Device</dt>
 <dd>
-<p>(Sensor, Composition)  back and bone of library, brings parts of the library together. Gives meaning for generated data which are acquired from individual data feeds. Holds information like UUID, label, and description.</p>
+<p>(Sensor, SingleSensor, Actuator)  back and bone of library, brings parts of the library together. Gives meaning for generated data which are acquired from individual data feeds. Holds information like UUID, label, and description.</p>
 </dd>
-<dt class="hdlist1">TimeSimulation</dt>
+<dt class="hdlist1">ActiveDevice</dt>
 <dd>
 <p>provides the possibility to simulate Device in time. Time intervals are determined with data feed like with device. Classes create an environment for a device where asynchronous tasks poll data from it. This is way how to simulate real, standalone devices (it is needed to configure NetworkAdapter for time simulated device, for it to be able to send data with a specific protocol to right destination)</p>
 </dd>
@@ -257,7 +292,7 @@ As documented in Observer Pattern, for receiving notifications register our new 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">Sensor device = <span style="color:#080;font-weight:bold">new</span> Thermometer(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ThermometerExample</span><span style="color:#710">&quot;</span></span>, dataFeed);</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java">SimpleSensor device = <span style="color:#080;font-weight:bold">new</span> Thermometer(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ThermometerExample</span><span style="color:#710">&quot;</span></span>, dataFeed);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -277,17 +312,17 @@ As in the first example we need data feed and device</p>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java">DataFeed dataFeed = <span style="color:#080;font-weight:bold">new</span> NormalDistributionDataFeed(<span style="color:#00D">18</span>, <span style="color:#00D">3</span>);
-Sensor device = <span style="color:#080;font-weight:bold">new</span> Thermometer(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ThermometerExample</span><span style="color:#710">&quot;</span></span>, dataFeed);</code></pre>
+SimpleSensor device = <span style="color:#080;font-weight:bold">new</span> Thermometer(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ThermometerExample</span><span style="color:#710">&quot;</span></span>, dataFeed);</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="time-simulation-example"><a class="anchor" href="#time-simulation-example"></a>Time Simulation example</h4>
+<h4 id="active-device-example"><a class="anchor" href="#active-device-example"></a>Active Device example</h4>
 <div class="paragraph">
 <p>Now, we know how to set up a simple device.
 Define device as we did in previous examples
 In order to simulate device in time - to be able to send data periodically in set intervals, we need to wrap it with running environment called time simulation
-Like device, time simulation also needs some data feed to be able to determinate mentioned time intervals</p>
+Like device, <code>ActiveDevice</code> also needs some data feed to be able to determinate mentioned time intervals</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -295,11 +330,11 @@ Like device, time simulation also needs some data feed to be able to determinate
 </div>
 </div>
 <div class="paragraph">
-<p>We create an instance of time simulation</p>
+<p>We create an instance of <code>ActiveDevice</code> to simulate our device in time.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">TimeSimulation sim = <span style="color:#080;font-weight:bold">new</span> TimeSimulationImpl(timeFeed, device);</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java">ActiveDevice active = <span style="color:#080;font-weight:bold">new</span> ActiveDeviceImpl(timeFeed, device);</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -307,7 +342,7 @@ Like device, time simulation also needs some data feed to be able to determinate
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">sim.simulate();</code></pre>
+<pre class="CodeRay highlight"><code data-lang="java">active.start();</code></pre>
 </div>
 </div>
 </div>
