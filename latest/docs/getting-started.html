@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PatrIoT Framework Latest | Getting Started | Getting started guide</title>
+
+  <!-- Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../latest/_images/favicon-32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../latest/_images/favicon.ico"><![endif]-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css" crossorigin="anonymous" integrity="sha384-zhIsEafzyQWHSoMCQ4BfT8ZlRXQyIFwAHAJn32PNdsb8n6tVysGZSLpEEIvCskw4">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js" crossorigin="anonymous" integrity="sha384-yDKe+FHcWYXuC4QP8bZULyLbkQWMpTkyk4v/fJi+7MwzWrT+SFIP5wFYQrWu5L+j"></script>
+  <script type='text/javascript'>
+      hljs.initHighlightingOnLoad();
+  </script>
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+	      <a class="navbar-brand" href="http://www.patriot-framework.io/">
+		      <img alt="PatrIoTFramefork" src="../../latest/_images/PATRIOT_logo_horizontal.svg" height="30">
+	      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#main">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#features">Features</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../welcome/index.html">Documentation</a>
+            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../javadocs/index.html">JavaDocs</a>
+        </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#contact">Get in Touch</a>
+            </li>
+        </ul></div>
+      </div>
+    </nav>	
+   <div class="container main-cont">
+    <p class="d-md-none toggle-nav pull-left">
+      <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb bg-white">
+      <li class="d-block d-md-none breadcrumb-item">
+        <h4 class="red-text">Documentation</h4>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item">
+        <a href="https://patriot-framework.io/docs">Home</a>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item">
+        <a href="../welcome/index.html">PatrIoT Framework Latest</a>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item active">
+        <a href="../docs/framework.html">Getting Started</a>
+      </li>
+      
+      <li class="d-none d-md-block breadcrumb-item active">
+        Getting started guide
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-5 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>PatrIoT Framework
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../welcome/index.html">Welcome</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-down"></span>Getting Started
+      </a>
+      <ul id="topicGroup1" class="collapse show in list-unstyled">
+            <li><a class="" href="../docs/framework.html">General information</a></li>
+            <li><a class="active" href="../docs/getting-started.html">Getting started guide</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup2">
+        <span id="tgSpan2" class="fa fa-angle-right"></span>Framework Base
+      </a>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/patriot-api.html">PatrIoT API</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup3">
+        <span id="tgSpan3" class="fa fa-angle-right"></span>Network Simulation
+      </a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/network-sim.html">Network simulation</a></li>
+            <li><a class="" href="../docs/multihost.html">Support for multihost</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup4">
+        <span id="tgSpan4" class="fa fa-angle-right"></span>Data Generation
+      </a>
+      <ul id="topicGroup4" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/data-generator.html">Data Generator</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup5">
+        <span id="tgSpan5" class="fa fa-angle-right"></span>Advanced topics
+      </a>
+      <ul id="topicGroup5" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/building-sources.html">Building sources</a></li>
+            <li><a class="" href="../docs/smarthome-guide.html">Smart home tests</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Getting started guide</h2>
+        </div>
+        <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#getting-started">Getting started guide</a>
+<ul class="sectlevel2">
+<li><a href="#prerequisities">Prerequisities</a></li>
+<li><a href="#creating-pom-xml">Creating pom.xml</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="getting-started"><a class="anchor" href="#getting-started"></a>Getting started guide</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This part of document will briefly familiarize the reader with the necessary steps to
+prepare the all the dependencies required to run PatrIoT framework as well as prepare
+the development environment to ensure efficient development of testing program.</p>
+</div>
+<div class="sect2">
+<h3 id="prerequisities"><a class="anchor" href="#prerequisities"></a>Prerequisities</h3>
+<div class="paragraph">
+<p>PatrIoT framework is using open-source technologies that allows test developer to easily
+prepare and conduct testing of IoT applications. Such technologies have the advantage of
+being ready to deploy to most of the open-source friendly operating systems with prebuilt
+artifacts, which are working out of the box.
+In order to run the tests with PatrIoT Framework you need following list of software ready
+on your development machine:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Machine with Linux (recommended Fedora)</p>
+</li>
+<li>
+<p>Java 8 or 11 installed.</p>
+</li>
+<li>
+<p>Java JDK installed</p>
+</li>
+<li>
+<p>docker</p>
+</li>
+<li>
+<p>Maven</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="installation-on-various-linux-distributions"><a class="anchor" href="#installation-on-various-linux-distributions"></a>Installation on various Linux distributions</h4>
+<div class="paragraph">
+<p>Following part describes how to install dependencies on various Linux distributions.</p>
+</div>
+<div class="sect4">
+<h5 id="fedora-30"><a class="anchor" href="#fedora-30"></a>Fedora 30</h5>
+<div class="paragraph">
+<p>To install java please write following command as root:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="c"># dnf install java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 maven</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To install docker we&#8217;ll need to first enable it&#8217;s repository:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="c"># dnf -y install dnf-plugins-core</span>
+<span class="c"># dnf config-manager \</span>
+   <span class="nt">--add-repo</span> https://download.docker.com/linux/fedora/docker-ce.repository
+<span class="c"># dnf makecache</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we can install docker and enable its service:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="c"># dnf install docker-ce docker-ce-cli containerd.io</span>
+<span class="c"># systemctl enable --now docker.service</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="ubuntu-20-04"><a class="anchor" href="#ubuntu-20-04"></a>Ubuntu 20.04</h5>
+<div class="paragraph">
+<p>As in example with fedora we&#8217;ll need to use root access to the system, since we&#8217;re going to perform
+administrative tasks, in order to install necessary packages run following commands in terminal:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># apt install openjdk-8-jdk maven</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To install docker we just need to install <code>docker.io</code> package, enable and start the service, this can be achieved by following
+commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="c"># apt install docker.io</span>
+<span class="c"># sytemctl enable --now docker.service</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="resolving-issues-with-user-access-to-the-docker-service"><a class="anchor" href="#resolving-issues-with-user-access-to-the-docker-service"></a>Resolving issues with user access to the docker service</h5>
+<div class="paragraph">
+<p>On new installations of docker it might happen that basic user doesn&#8217;t have rights to run docker
+containers. This is due to the neccessary security elevation to access the docker daemon.
+For this problem there are two principal solutions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Execute tests as user root - highly discouraged since it might compromise the whole system and it is also highly impractical.</p>
+</li>
+<li>
+<p>Allow specific user to use docker daemon directly - solution which is more common as well as is more safe in case of test or development failure.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To allow specific user to use docker daemon the process generally consists of two steps. First creating unix group on
+the development machine which has allows access to the <code>docker.sock</code> and second: to add specific user to selected group.
+For specific actions - if necessary - please consult official docker documentation, which describes this situation in
+more detail and contains steps necessary to enable common user to access the docker daemon.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-pom-xml"><a class="anchor" href="#creating-pom-xml"></a>Creating pom.xml</h3>
+<div class="paragraph">
+<p>Patriot framework is dependent on and integrated into <a href="https://junit.org/junit5/">Junit 5</a>. Hence to create the
+testing project the first step will be to create <a href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html">Maven project</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="setting-up-the-project"><a class="anchor" href="#setting-up-the-project"></a>Setting up the project</h4>
+<div class="paragraph">
+<p>To setup project we&#8217;ll start with creating the file structure necessary for the testing. Let&#8217;s assume our tetsing project will
+be named <code>my-simple-test</code>. Then we can create proceed with following commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nv">$ </span><span class="nb">mkdir </span>my-simple-test
+<span class="nv">$ </span><span class="nb">cd </span>my-simple-test
+<span class="nv">$ </span><span class="nb">mkdir </span>my-simple-test/<span class="o">{</span>src,test<span class="o">}</span>
+<span class="nv">$ </span><span class="nb">touch </span>pom.xml</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fill-in-pom-xml"><a class="anchor" href="#fill-in-pom-xml"></a>Fill in pom.xml</h4>
+<div class="paragraph">
+<p>The next step is to create initial structure for <code>maven</code> in order to execute tests. Following snippet shows initial
+configuration of the project itself</p>
+</div>
+<div class="listingblock">
+<div class="title">Minimal pom.xml</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+   <span class="nt">&lt;groupId&gt;</span>my-group<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>my-simple-test<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+
+   <span class="nt">&lt;properties&gt;</span>
+      <span class="nt">&lt;junit.jupiter.version&gt;</span>5.4.0<span class="nt">&lt;/junit.jupiter.version&gt;</span>
+      <span class="nt">&lt;patriot.framework.version&gt;</span>3.0.0<span class="nt">&lt;/patriot.framework.version&gt;</span>
+   <span class="nt">&lt;/properties&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To enable usage of PatrIoT framework you need to add those packages as dependency into the
+dependency section:</p>
+</div>
+<div class="listingblock">
+<div class="title">PatrIoT as a dependency</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+         <span class="nt">&lt;groupId&gt;</span>io.patriot-framework<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>patriot-api<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>${patriot.framework.version}<span class="nt">&lt;/version&gt;</span>
+         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+         <span class="nt">&lt;groupId&gt;</span>io.patriot-framework<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>docker-network-simulator<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>${patriot.framework.version}<span class="nt">&lt;/version&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since PatrIoT framework depends on JUnit as Test execution engine, you&#8217;ll need to add JUnit as well:</p>
+</div>
+<div class="listingblock">
+<div class="title">Junit dependency</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml">   <span class="nt">&lt;dependencies&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+         <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-api<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>5.4.0<span class="nt">&lt;/version&gt;</span>
+         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+         <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-engine<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>5.4.0<span class="nt">&lt;/version&gt;</span>
+         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>pom.xml</code> that could be used for bootsraping your configuration can be seen in following sinppet:</p>
+</div>
+<div class="listingblock">
+<div class="title">Full pom.xml illustrating configuration</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+   <span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>smarthouse-tests<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+
+   <span class="nt">&lt;properties&gt;</span>
+      <span class="nt">&lt;junit.jupiter.version&gt;</span>5.4.0<span class="nt">&lt;/junit.jupiter.version&gt;</span>
+      <span class="nt">&lt;patriot.framework.version&gt;</span>2.0.0<span class="nt">&lt;/patriot.framework.version&gt;</span>
+   <span class="nt">&lt;/properties&gt;</span>
+
+   <span class="nt">&lt;dependencies&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+         <span class="nt">&lt;groupId&gt;</span>org.slf4j<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>slf4j-simple<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>1.7.5<span class="nt">&lt;/version&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+         <span class="nt">&lt;groupId&gt;</span>io.patriot-framework<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>patriot-api<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>${patriot.framework.version}<span class="nt">&lt;/version&gt;</span>
+         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+         <span class="nt">&lt;groupId&gt;</span>io.patriot-framework<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>docker-network-simulator<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>${patriot.framework.version}<span class="nt">&lt;/version&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+         <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-api<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>5.4.0<span class="nt">&lt;/version&gt;</span>
+         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+      <span class="nt">&lt;dependency&gt;</span>
+         <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+         <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-engine<span class="nt">&lt;/artifactId&gt;</span>
+         <span class="nt">&lt;version&gt;</span>5.4.0<span class="nt">&lt;/version&gt;</span>
+         <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+      <span class="nt">&lt;/dependency&gt;</span>
+
+   <span class="nt">&lt;/dependencies&gt;</span>
+
+   <span class="nt">&lt;build&gt;</span>
+      <span class="nt">&lt;plugins&gt;</span>
+         <span class="nt">&lt;plugin&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.7.0<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;configuration&gt;</span>
+               <span class="nt">&lt;source&gt;</span>8<span class="nt">&lt;/source&gt;</span>
+               <span class="nt">&lt;target&gt;</span>8<span class="nt">&lt;/target&gt;</span>
+            <span class="nt">&lt;/configuration&gt;</span>
+         <span class="nt">&lt;/plugin&gt;</span>
+         <span class="nt">&lt;plugin&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>3.0.0-M1<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;configuration&gt;</span>
+               <span class="nt">&lt;systemPropertyVariables&gt;</span>
+                  <span class="nt">&lt;junit.jupiter.extensions.autodetection.enabled&gt;</span>true<span class="nt">&lt;/junit.jupiter.extensions.autodetection.enabled&gt;</span>
+               <span class="nt">&lt;/systemPropertyVariables&gt;</span>
+            <span class="nt">&lt;/configuration&gt;</span>
+         <span class="nt">&lt;/plugin&gt;</span>
+      <span class="nt">&lt;/plugins&gt;</span>
+   <span class="nt">&lt;/build&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   <script src="../../latest/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+   <script type="text/javascript">
+       /*<![CDATA[*/
+       $(document).ready(function() {
+           $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+               if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+                   $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+               }
+           });
+           $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+               if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+                   $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+               }
+           });
+           $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+               $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+           });
+           $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+               $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+           });
+       });
+       /*]]>*/
+   </script>
+</body>
+</html>

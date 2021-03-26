@@ -94,6 +94,7 @@
       </a>
       <ul id="topicGroup1" class="collapse  list-unstyled">
             <li><a class="" href="../docs/framework.html">General information</a></li>
+            <li><a class="" href="../docs/getting-started.html">Getting started guide</a></li>
       </ul>
     </li>
     <li class="nav-header">
@@ -110,6 +111,7 @@
       </a>
       <ul id="topicGroup3" class="collapse  list-unstyled">
             <li><a class="" href="../docs/network-sim.html">Network simulation</a></li>
+            <li><a class="" href="../docs/multihost.html">Support for multihost</a></li>
       </ul>
     </li>
     <li class="nav-header">
@@ -118,6 +120,15 @@
       </a>
       <ul id="topicGroup4" class="collapse show in list-unstyled">
             <li><a class="active" href="../docs/data-generator.html">Data Generator</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup5">
+        <span id="tgSpan5" class="fa fa-angle-right"></span>Advanced topics
+      </a>
+      <ul id="topicGroup5" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/building-sources.html">Building sources</a></li>
+            <li><a class="" href="../docs/smarthome-guide.html">Smart home tests</a></li>
       </ul>
     </li>
 </ul>
@@ -132,8 +143,11 @@
 <li><a href="#description">Description</a></li>
 <li><a href="#functionality">Functionality</a></li>
 <li><a href="#usage">Usage</a>
-<ul class="sectlevel2">
-<li><a href="#simple-example-device-with-data-on-pooling">Simple example - device with data on pooling</a></li>
+<ul class="sectlevel3">
+<li><a href="#on-demand-data-pooling">On demand data pooling</a></li>
+<li><a href="#continuous-data-delivery-activedevice">Continuous data delivery - <code>ActiveDevice</code></a></li>
+<li><a href="#actuator-example">Actuator example</a></li>
+<li><a href="#add-additional-capabilities-for-device">Add additional capabilities for <code>Device</code></a></li>
 </ul>
 </li>
 </ul>
@@ -141,6 +155,11 @@
 <div class="sect1">
 <h2 id="description"><a class="anchor" href="#description"></a>Description</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Data Generator library is a Java library offering tools for device simulation suitable for IoT testing environments
+or as independent data sources. Device emulation supports consists of various types such as Sensors and Actuators,
+each represents different roles and responsibilities with different data generation methods.</p>
+</div>
 <div class="paragraph">
 <p>This library provides two methods of data generation:</p>
 </div>
@@ -152,9 +171,9 @@
 This allows the user to get data on demand with custom parameters.
 The number and types of parameters for this method depends mostly on the DataFeed implementation provided for the Device.</p>
 </dd>
-<dt class="hdlist1">Wrapping <code>Device</code> with <code>ActiveDevice</code></dt>
+<dt class="hdlist1">Continuous data delivery</dt>
 <dd>
-<p>In this case the <code>requestData()</code> method is called periodically by <code>ActiveDevice</code> and it can be used as a standalone device.</p>
+<p>Is achieved by wrapping instance of <code>Device</code> with <code>ActiveDevice</code> object. In this case the <code>requestData()</code> method is called periodically by <code>ActiveDevice</code>. This composition can be considered as a one, standalone device.</p>
 </dd>
 </dl>
 </div>
@@ -165,12 +184,16 @@ The number and types of parameters for this method depends mostly on the DataFee
 <ol class="arabic">
 <li>
 <p>Configure a <code>NetworkAdapter</code> to enable data handling. (This is done the same way as in real-life applications.)
-This way data can be sent to valid endpoint using the REST protocol.</p>
+This way data can be sent to valid endpoint using the various network protocols like REST, MQTT and many more.</p>
+</li>
+<li>
+<p>Enable <code>CoAPControlServer</code> from <code>Controller</code> package to allow ad-hoc configuration of remote devices. To access CoAP server created by particular devices use simple tool provided by the library: <code>CoAPControlClient</code>, or any other
+CoAP client available on the market.</p>
 </li>
 <li>
 <p>For testing purposes, it is recommended to create an <code>Observer</code>.
 Using the <code>Observer</code> pattern, the user is able to catch important information from the data creation process without using debugging tools or viewing log messages.
-For information on deploying</p>
+For information on deploying.</p>
 </li>
 </ol>
 </div>
@@ -181,8 +204,8 @@ For information on deploying</p>
 <dl>
 <dt class="hdlist1">Sensor</dt>
 <dd>
-<p>interface adds possibility to define List of <code>DataFeed</code> to <code>Device</code>. This provides possibility to simulate
-data generation for multiple data sources. For example commonly known DHT11 temperature-humidity sensor is working with
+<p>interface adds possibility to define List of <code>DataFeed</code>. This provides possibility to simulate
+data generation for multiple independent data sources. For example commonly known DHT11 temperature-humidity sensor is working with
 two values simultaneously. This requires possibility to define multiple DataFeeds for one device.</p>
 </dd>
 <dt class="hdlist1">SimpleSensor</dt>
@@ -201,38 +224,36 @@ that is needed for actuator to finish simulated action. Handles any transitions 
 <div class="paragraph">
 <p>The library provides few preconfigured devices that are ready for use. The idea behind them is to simplify the creation process for the user in case he wants to create commonly known devices but to offer him freedom in configuring his own.</p>
 </div>
-<div class="paragraph">
-<p>Sensors:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Default</p>
-</li>
-<li>
-<p>Hygrometer</p>
-</li>
-<li>
-<p>Thermometer</p>
-</li>
-<li>
-<p>DHT11</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Actuators:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>LinearActuator</p>
-</li>
-<li>
-<p>RotaryActuator</p>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sensors</th>
+<th class="tableblock halign-left valign-top">Actuators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BasicSensor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BasicActuator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hygrometer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LinearActuator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thermometer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RotaryActuator</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DHT11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BinaryActuator</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -243,6 +264,10 @@ that is needed for actuator to finish simulated action. Handles any transitions 
 </div>
 <div class="dlist">
 <dl>
+<dt class="hdlist1">Device</dt>
+<dd>
+<p>(Sensor, SingleSensor, Actuator)  back and bone of library, brings parts of the library together. Gives meaning for generated data which are acquired from individual data feeds. Holds information like UUID, label, and description.</p>
+</dd>
 <dt class="hdlist1">DataFeed</dt>
 <dd>
 <p>tool to provide data streams to different components (e.g. time simulation, simulated devices). This interface is ready for further user customization,
@@ -251,17 +276,16 @@ SSJ (Stochastic Simulation in Java) - Java library providing a tool for stochast
 Expression approach, where a user defines an expression (function) which solutions represents expected data stream
 “Logic” driven approach. A user is fully capable to customize data generating class as long as it implements DataFeed interface</p>
 </dd>
-<dt class="hdlist1">Device</dt>
+<dt class="hdlist1">Controller</dt>
 <dd>
-<p>(Sensor, SingleSensor, Actuator)  back and bone of library, brings parts of the library together. Gives meaning for generated data which are acquired from individual data feeds. Holds information like UUID, label, and description.</p>
+<p>provides a collection of classes that allow the user to manipulate with configuration of existing devices,
+therefore influence ongoing processes. Thanks to usage of CoAP <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, user is
+able to interact with local or remote devices. For this purpose, library supports both server and client CoAP perspectives.</p>
 </dd>
-<dt class="hdlist1">ActiveDevice</dt>
+<dt class="hdlist1">NetworkAdapter</dt>
 <dd>
-<p>provides the possibility to simulate Device in time. Time intervals are determined with data feed like with device. Classes create an environment for a device where asynchronous tasks poll data from it. This is way how to simulate real, standalone devices (it is needed to configure NetworkAdapter for time simulated device, for it to be able to send data with a specific protocol to right destination)</p>
-</dd>
-<dt class="hdlist1">DataObservable</dt>
-<dd>
-<p>simple Observer Pattern, designed for observing Device whenever it produces new data. This is important mostly because time simulation polls data automatically, therefore users ability to retrieve a generated value from the device is denied. Observer fills this gap by providing the tool for catching and reacting for a data creation event.</p>
+<p>provides facilities that enrich functionality of Device with possibility to transfer generated data
+over the network to desired destination. Package implements support of protocols such as HTTP and MQTT.</p>
 </dd>
 </dl>
 </div>
@@ -271,30 +295,24 @@ Expression approach, where a user defines an expression (function) which solutio
 <h2 id="usage"><a class="anchor" href="#usage"></a>Usage</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>User needs to create new class that implements Observer.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
-The device holds a list of Observables that will be notified as soon as new data are generated. This list is updated by registering the device to DataObservable class.
-As documented in Observer Pattern, for receiving notifications register our new Observer class to data observable by addObserver(observer)</p>
+<p>Principle behind creation of simulated device is simple. First, the user has to determinate desired properties of simulated
+device and choose corresponding or best fitting representation offered by Data Generator library. Next step is to
+correctly choose or configure method for data simulation itself (in case of <code>Sensor</code> it would be the right
+choice of`DataFeed` and for <code>Actuator</code> it would be correct configuration of <code>StateMachine</code>). Finally, the last step
+(or steps) is to assign all required functionality that is offered by the library to the device.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">DataWrapper</dt>
-<dd>
-<p>provides tools that allow to wrap data to common structures like JSON, XML e.t.c.</p>
-</dd>
-<dt class="hdlist1">NetworkAdapter</dt>
-<dd>
-<p>provides classes when used with device allows the user to send data to the destination. All he needs is to select the desired protocol, REST, MQTT or design his own by implementing the NetworkAdapter interface and generated data will be delivered to right receiver.</p>
-</dd>
-</dl>
+<div class="paragraph">
+<p>As we can see, the functionality of the library is achieved by putting together right pieces.
+=== Sensor example</p>
 </div>
-<div class="sect2">
-<h3 id="simple-example-device-with-data-on-pooling"><a class="anchor" href="#simple-example-device-with-data-on-pooling"></a>Simple example - device with data on pooling</h3>
+<div class="sect3">
+<h4 id="on-demand-data-pooling"><a class="anchor" href="#on-demand-data-pooling"></a>On demand data pooling</h4>
 <div class="paragraph">
 <p>A base for our device is properly configured data feed. For this example</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">DataFeed dataFeed = <span style="color:#080;font-weight:bold">new</span> NormalDistributionDataFeed(<span style="color:#00D">18</span>, <span style="color:#00D">3</span>);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">DataFeed</span> <span class="n">dataFeed</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">NormalDistVariateDataFeed</span><span class="o">(</span><span class="mi">30</span><span class="o">,</span> <span class="mi">7</span><span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -302,7 +320,7 @@ As documented in Observer Pattern, for receiving notifications register our new 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">SimpleSensor device = <span style="color:#080;font-weight:bold">new</span> Thermometer(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ThermometerExample</span><span style="color:#710">&quot;</span></span>, dataFeed);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">SimpleSensor</span> <span class="n">device</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Thermometer</span><span class="o">(</span><span class="s">"ThermometerExample"</span><span class="o">,</span> <span class="n">dataFeed</span><span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -310,24 +328,12 @@ As documented in Observer Pattern, for receiving notifications register our new 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">device.requestData()</code></pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="simple-example-device-with-data-on-pooling-2"><a class="anchor" href="#simple-example-device-with-data-on-pooling-2"></a>Simple example - device with data on pooling</h4>
-<div class="paragraph">
-<p>The first example is nice, but it returns “random” value from definition scope of normal distribution.
-As in the first example we need data feed and device</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">DataFeed dataFeed = <span style="color:#080;font-weight:bold">new</span> NormalDistributionDataFeed(<span style="color:#00D">18</span>, <span style="color:#00D">3</span>);
-SimpleSensor device = <span style="color:#080;font-weight:bold">new</span> Thermometer(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ThermometerExample</span><span style="color:#710">&quot;</span></span>, dataFeed);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">device</span><span class="o">.</span><span class="na">requestData</span><span class="o">()</span></code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="active-device-example"><a class="anchor" href="#active-device-example"></a>Active Device example</h4>
+<h4 id="continuous-data-delivery-activedevice"><a class="anchor" href="#continuous-data-delivery-activedevice"></a>Continuous data delivery - <code>ActiveDevice</code></h4>
 <div class="paragraph">
 <p>Now, we know how to set up a simple device.
 Define device as we did in previous examples
@@ -336,7 +342,7 @@ Like device, <code>ActiveDevice</code> also needs some data feed to be able to d
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">DataFeed timeFeed = <span style="color:#080;font-weight:bold">new</span> LinearDataFeed(<span style="color:#00D">2000</span>);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">DataFeed</span> <span class="n">timeFeed</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LinearDataFeed</span><span class="o">(</span><span class="mi">2000</span><span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -344,7 +350,7 @@ Like device, <code>ActiveDevice</code> also needs some data feed to be able to d
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">ActiveDevice active = <span style="color:#080;font-weight:bold">new</span> ActiveDeviceImpl(timeFeed, device);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">ActiveDevice</span> <span class="n">active</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ActiveDeviceImpl</span><span class="o">(</span><span class="n">timeFeed</span><span class="o">,</span> <span class="n">device</span><span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -352,8 +358,70 @@ Like device, <code>ActiveDevice</code> also needs some data feed to be able to d
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">active.start();</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="n">active</span><span class="o">.</span><span class="na">start</span><span class="o">();</span></code></pre>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="actuator-example"><a class="anchor" href="#actuator-example"></a>Actuator example</h4>
+<div class="paragraph">
+<p>The behaviour of an <code>Actuator</code> is specified by the <code>StateMachine</code> configuration.</p>
+</div>
+<div class="paragraph">
+<p>Example of state machine of two states and two transitions. Note that, input event is not specified, as there is
+only one possible transition from each state (input event is generated and determinated automatically byt
+the state machine):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">new</span> <span class="nc">StateMachine</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="s">"Off"</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="s">"On"</span><span class="o">)</span>
+        <span class="n">from</span><span class="o">(</span><span class="s">"On"</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="s">"Off"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">build</span><span class="o">()</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>StateMachine</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">new</span> <span class="nc">StateMachine</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="s">"Retracted"</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="s">"Extended"</span><span class="o">,</span> <span class="s">"extend"</span><span class="o">,</span> <span class="s">"extending"</span><span class="o">,</span> <span class="mi">10</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="s">"Extended"</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="s">"Retracted"</span><span class="o">,</span> <span class="s">"retract"</span><span class="o">,</span> <span class="s">"retracting"</span><span class="o">,</span> <span class="mi">10</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">build</span><span class="o">()</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally, assign created state machine to <code>Actuator</code> instance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Actuator</span> <span class="n">actuator</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicActuator</span><span class="o">(</span><span class="s">"actuator"</span><span class="o">)</span>
+<span class="n">actuator</span><span class="o">.</span><span class="na">setStateMachine</span><span class="o">(</span><span class="n">sm</span><span class="o">)</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-additional-capabilities-for-device"><a class="anchor" href="#add-additional-capabilities-for-device"></a>Add additional capabilities for <code>Device</code></h4>
+<div class="paragraph">
+<p>To register device to CoAP server simply call method:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">device</span><span class="o">.</span><span class="na">registerToCoapServer</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Send generated data to desired destination using Network Adapter component:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">NetworkAdapter</span> <span class="n">na</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Rest</span><span class="o">(</span><span class="n">httpEndpoint</span><span class="o">,</span> <span class="k">new</span> <span class="nc">JSONWrapper</span><span class="o">());</span>
+<span class="n">sensor</span><span class="o">.</span><span class="na">setNetworkAdapter</span><span class="o">(</span><span class="n">na</span><span class="o">);</span></code></pre>
 </div>
 </div>
 </div>
@@ -362,7 +430,7 @@ Like device, <code>ActiveDevice</code> also needs some data feed to be able to d
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Observer.html" class="bare">https://docs.oracle.com/javase/8/docs/api/java/util/Observer.html</a>
+<a href="#_footnoteref_1">1</a>. <a href="https://tools.ietf.org/html/rfc7252" class="bare">https://tools.ietf.org/html/rfc7252</a>
 </div>
 </div>
       </div>

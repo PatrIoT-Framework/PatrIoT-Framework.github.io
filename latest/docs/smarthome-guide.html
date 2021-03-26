@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PatrIoT Framework Latest | Advanced topics | Smart home tests</title>
+
+  <!-- Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../latest/_images/favicon-32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../latest/_images/favicon.ico"><![endif]-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css" crossorigin="anonymous" integrity="sha384-zhIsEafzyQWHSoMCQ4BfT8ZlRXQyIFwAHAJn32PNdsb8n6tVysGZSLpEEIvCskw4">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js" crossorigin="anonymous" integrity="sha384-yDKe+FHcWYXuC4QP8bZULyLbkQWMpTkyk4v/fJi+7MwzWrT+SFIP5wFYQrWu5L+j"></script>
+  <script type='text/javascript'>
+      hljs.initHighlightingOnLoad();
+  </script>
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+	      <a class="navbar-brand" href="http://www.patriot-framework.io/">
+		      <img alt="PatrIoTFramefork" src="../../latest/_images/PATRIOT_logo_horizontal.svg" height="30">
+	      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#main">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#features">Features</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../welcome/index.html">Documentation</a>
+            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../javadocs/index.html">JavaDocs</a>
+        </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#contact">Get in Touch</a>
+            </li>
+        </ul></div>
+      </div>
+    </nav>	
+   <div class="container main-cont">
+    <p class="d-md-none toggle-nav pull-left">
+      <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb bg-white">
+      <li class="d-block d-md-none breadcrumb-item">
+        <h4 class="red-text">Documentation</h4>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item">
+        <a href="https://patriot-framework.io/docs">Home</a>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item">
+        <a href="../welcome/index.html">PatrIoT Framework Latest</a>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item active">
+        <a href="../docs/building-sources.html">Advanced topics</a>
+      </li>
+      
+      <li class="d-none d-md-block breadcrumb-item active">
+        Smart home tests
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-5 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>PatrIoT Framework
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../welcome/index.html">Welcome</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Getting Started
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/framework.html">General information</a></li>
+            <li><a class="" href="../docs/getting-started.html">Getting started guide</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup2">
+        <span id="tgSpan2" class="fa fa-angle-right"></span>Framework Base
+      </a>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/patriot-api.html">PatrIoT API</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup3">
+        <span id="tgSpan3" class="fa fa-angle-right"></span>Network Simulation
+      </a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/network-sim.html">Network simulation</a></li>
+            <li><a class="" href="../docs/multihost.html">Support for multihost</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup4">
+        <span id="tgSpan4" class="fa fa-angle-right"></span>Data Generation
+      </a>
+      <ul id="topicGroup4" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/data-generator.html">Data Generator</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup5">
+        <span id="tgSpan5" class="fa fa-angle-down"></span>Advanced topics
+      </a>
+      <ul id="topicGroup5" class="collapse show in list-unstyled">
+            <li><a class="" href="../docs/building-sources.html">Building sources</a></li>
+            <li><a class="active" href="../docs/smarthome-guide.html">Smart home tests</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Smart House Tests</h2>
+        </div>
+        <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#smarthouse-tests">Smart House Tests</a>
+<ul class="sectlevel2">
+<li><a href="#environment-setup">Environment setup</a></li>
+<li><a href="#executing-the-tests">Executing the tests</a></li>
+<li><a href="#stopping-the-monitoring-environment">Stopping the monitoring environment</a></li>
+<li><a href="#description-of-the-sut">Description of the SUT</a></li>
+<li><a href="#emulation-of-devices">Emulation of devices</a></li>
+<li><a href="#integration-tests">Integration tests</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="smarthouse-tests"><a class="anchor" href="#smarthouse-tests"></a>Smart House Tests</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to show the full example of PatrIoT framework in use, this section will provide
+a detailed explanation of example source code with testbed as well as testing scenarios.
+The source codes can be found in the example directory and are composed of the following modules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>smart-home-integration-test</code> the project containing tests written with PatrIoT framework.</p>
+</li>
+<li>
+<p><code>virtual-smart-home</code> a sample implementation of a smart home using the PatrIoT capabilities of data generation.</p>
+</li>
+<li>
+<p><code>smart-gateway</code> a sample gateway which conducts operations over <code>virtual-smart-home</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Prerequisites</strong></p>
+</div>
+<div class="paragraph">
+<p>This is the list of installed software you’ll need to run this
+example of integration tests with PatrIoT Framework.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java in version 8 or higher</p>
+</li>
+<li>
+<p>Maven</p>
+</li>
+<li>
+<p>Docker</p>
+</li>
+<li>
+<p>Docker compose</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="environment-setup"><a class="anchor" href="#environment-setup"></a>Environment setup</h3>
+<div class="paragraph">
+<p>In order to run these tests, you need to have the tested software
+prepared and ready. To achieve this, you need to produce docker images which
+are able to run the tested modules which are produced by the following procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Change the directory to the selected component.</p>
+</li>
+<li>
+<p>Run <code>mvn clean package</code> to produce a compiled java program.</p>
+</li>
+<li>
+<p>Build the docker image by running <code>docker build . --tag myapp/${COMPONENT}</code></p>
+</li>
+<li>
+<p>Do these steps for <code>virtual-smart-home</code> and <code>smart-gateway</code> (e.g. <code>COMPONENT=virtual-smart-home</code>)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once the components are built and docker images are produced pull the router image by executing following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="nv">$ </span>docker pull patriotframework/patriot-router:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then the test project can be executed, as a first step it is needed to change directory to the
+<code>smart-home-integration-test</code> project directory. After that, it is necessary to start up the
+monitoring environment:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="nv">$ </span>docker-compose up <span class="nt">-d</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command will start the monitoring environment with output similar to
+this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Creating network "smarthousetests_default" with the default driver
+Creating smarthousetests_mongodb_1       ... done
+Creating smarthousetests_elasticsearch_1 ... done
+Creating smarthousetests_kibana_1        ... done
+Creating smarthousetests_graylog_1       ... done</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Please note the network name and execute the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="nv">$ </span>docker newtwork inspect <span class="k">${</span><span class="nv">NETWORK_NAME</span><span class="k">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where the network name is the name printed by <code>docker-compose</code> on the
+first line, in this case, the name would be <code>smarthousetests_default</code>,
+and note the IP address for <code>graylog</code> container, in our case named
+<code>smarthousetests_graylog_1</code>. The output for graylog will be similar to</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>            "eb410e97891a323aca5120bb46e319cad66b63e181ad60f2fdb6dbbe478dab01": {
+                "Name": "smarthousetests_graylog_1",
+                "EndpointID": "9204f94f1c3c7699c209a81e6b7053f55c70bf278be0c6d25e6139510feca712",
+                "MacAddress": "02:42:ac:12:00:05",
+                "IPv4Address": "172.18.0.5/16",
+                "IPv6Address": ""
+            }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you’ll have the IP address of Graylog, set it to the file
+<code>src/test/resources/patriot.properties</code> to key
+<code>io.patriot_framework.monitoring.addr</code>, in this case</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="properties"><span class="py">io.patriot_framework.monitoring.addr</span><span class="p">=</span><span class="s">172.18.0.5</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By this step, all the preparation is done.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="executing-the-tests"><a class="anchor" href="#executing-the-tests"></a>Executing the tests</h3>
+<div class="paragraph">
+<p>When all of the preparation is done you can execute all of the tests by
+executing</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="nv">$ </span>mvn clean <span class="nb">test</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The command will:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Setup the testing environment and deploy testes applications</p>
+</li>
+<li>
+<p>Execute the tests</p>
+</li>
+<li>
+<p>Clean up all resources</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="clean-up-after-failed-setup-or-tear-down"><a class="anchor" href="#clean-up-after-failed-setup-or-tear-down"></a>Clean up after failed setup or tear down</h4>
+<div class="paragraph">
+<p>If for some reason the setup phase ended in the middle of the setup
+(e.g. user interruption) or before tear down, you can delete all of the
+docker resources related to testing run by the following command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">docker <span class="nb">rm</span> <span class="nt">-f</span> smarthome Internal1 External1 gateway
+docker network <span class="nb">rm </span>SmartHome GatewayNetwork</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="stopping-the-monitoring-environment"><a class="anchor" href="#stopping-the-monitoring-environment"></a>Stopping the monitoring environment</h3>
+<div class="paragraph">
+<p>If you’ll need to stop the monitoring environment, without deletion
+(e.g. stop the containers but with data intact) you can perform it by
+following command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="nv">$ </span>docker-compose stop</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then the environment can be restarted by</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="nv">$ </span>docker-compose start</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you’d need to remove all of the resources (network, containers), then
+you’ll need to execute</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="nv">$ </span>docker-compose down</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>WARNING</strong> The removal of the containers does mean, that you’ll need to
+start the deployment from the top, because the network for the
+monitoring environment will be deleted and a new one might have different
+properties (e.g. network address).</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+<div class="sect2">
+<h3 id="description-of-the-sut"><a class="anchor" href="#description-of-the-sut"></a>Description of the SUT</h3>
+<div class="paragraph">
+<p>This part will briefly describe the tests written and the way how capabilities of PatrIoT framework
+are used to achieve deployment of testbed as well as execution of tests. This example is based on
+existing solution of the smart home prototype built for demonstration purposes of Bulldog library.
+The existing solution was modified to accommodate for a purely virtual run using PatrIoT to simulate
+devices and allow the deployment of SUT into a virtual environment.</p>
+</div>
+<div class="paragraph">
+<p>The implementation consists of two main parts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Virtual smart home&#8201;&#8212;&#8201;the smart home prototype itself with controllable appliances</p>
+</li>
+<li>
+<p>Smart home gateway&#8201;&#8212;&#8201;the gateway that is used as an interface to control the house</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="virtual-smart-home"><a class="anchor" href="#virtual-smart-home"></a>Virtual Smart Home</h4>
+<div class="paragraph">
+<p>The core application which controls the appliances is the virtual smart home. It is written in Java
+and uses Apache Camel as the base technology to expose the functions of the smart home and
+build API which enables access to emulated end devices. All of the functions are opened to
+the world via RESTfull API. In the original solution, the Apache Camel was extended by SilverSpoon
+library, which wraps the access to the physical devices into an Apache Camel routes.</p>
+</div>
+<div class="paragraph">
+<p>In order to move the scenario into the virtual world, all of the connections to the physical world
+were transformed by the usage of PatrIoT Data generator to the purely virtual objects, which are then
+used by the tests to simulate events similar to the real-world situations.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="smart-home-gateway"><a class="anchor" href="#smart-home-gateway"></a>Smart Home Gateway</h4>
+<div class="paragraph">
+<p>The Smart Home Gateway is an application that is connected to the virtual smart home via its API and
+does control the individual actions on the house as well as it responses to the events generated by it.
+It is written in Java as well and it is using Apache Camel to produce the API and connection layer to the
+house and Drools to build integration scenarios as Business processes. It enables more complex scenarios
+executed over the smart home, like composite actions which consist of multiple interactions with actuators&#8201;&#8212;&#8201;e.g. full lock of the house where all of the doors are locked, all lights are turned off and others.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="emulation-of-devices"><a class="anchor" href="#emulation-of-devices"></a>Emulation of devices</h3>
+<div class="paragraph">
+<p>In the original prototype, the devices were physically connected to the several buses and directly to the
+main computer of the smart house (Raspberry PI). Then all of them were used by a single Java application
+with direct access to them. All of the sensory data, as well as the actions performed on actuators
+were then collected and conducted by the application itself without any intermediate layer.</p>
+</div>
+<div class="paragraph">
+<p>To simulate such behaviour a mockup strategy was used, so all of the physical devices were
+recreated in the virtual version of smart home via PatrIoT framework and are used directly within the
+smart house implementation.</p>
+</div>
+<div class="paragraph">
+<p>The devices emulated from the original prototype by PatrIoT framework are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Door actuator - state machine kind of actuator</p>
+</li>
+<li>
+<p>Thermometer</p>
+</li>
+<li>
+<p>Hygrometer</p>
+</li>
+<li>
+<p>DHT11 device - combined thermometer and hygrometer</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="door-actuator"><a class="anchor" href="#door-actuator"></a>Door actuator</h5>
+<div class="paragraph">
+<p>The door actuator is a device simulating the remotely controlled automatic doors. The device can be
+in two normal states and two transitional states:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open - the doors are open to the world.</p>
+</li>
+<li>
+<p>Closed - the doors are closed.</p>
+</li>
+<li>
+<p>Opening - the doors are currently between states of Close and Open, which is set to take 1 second.</p>
+</li>
+<li>
+<p>Closing - the doors are moving from Open to Close which takes 1 second.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Code defining the state machine of door actuator.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DoorActuator</span> <span class="kd">extends</span> <span class="nc">RotaryActuator</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nf">DoorActuator</span><span class="o">(</span><span class="nc">String</span> <span class="n">label</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">label</span><span class="o">,</span> <span class="mi">1000</span><span class="o">);</span>
+        <span class="nc">StateMachine</span> <span class="n">machine</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StateMachine</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="s">"Closed"</span><span class="o">)</span>
+                  <span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="s">"Open"</span><span class="o">,</span> <span class="s">"open"</span><span class="o">,</span> <span class="s">"Opening"</span><span class="o">,</span> <span class="mi">1000</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="s">"Open"</span><span class="o">)</span>
+                  <span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="s">"Closed"</span><span class="o">,</span> <span class="s">"close"</span><span class="o">,</span> <span class="s">"Closing"</span><span class="o">,</span> <span class="mi">1000</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">setStateMachine</span><span class="o">(</span><span class="n">machine</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">....</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As seen in the above example, the code to define such behaviour is quite simple. The <code>StateMachine.Builder</code> object
+is used to define the states and transition function of such a device. The method <code>from</code> is used to denote
+the source state from which we&#8217;re making the transition. Use of method <code>to</code> then denotes, that upon delivery of
+event identified as <code>open</code>, the transition of states from <code>Closed</code> to <code>Open</code> should start and the immediate state
+of the StateMachine is set to be <code>Opening</code>. The same goes the other way around, that upon delivery of event <code>close</code>,
+the state will be switched to transitionary state <code>Closing</code> for 1 second and after the time is reached, the state
+<code>Closed</code> is set.</p>
+</div>
+<div class="paragraph">
+<p>The change of state is executed by call of method <code>controlSignal</code> which delivers the set event to the underlying
+state machine and triggers the transition. Such call is encapsulated into two methods - <code>openDoor</code> and <code>closeDoor</code>,
+which adds check if the selected operation is permitted in the current state.</p>
+</div>
+<div class="listingblock">
+<div class="title">Close door method</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">closeDoor</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">state</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="n">getStateMachine</span><span class="o">().</span><span class="na">getCurrent</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"Closed"</span><span class="o">)</span> <span class="o">||</span> <span class="n">state</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="s">"Closing"</span><span class="o">))</span> <span class="o">{</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">controlSignal</span><span class="o">(</span><span class="s">"close"</span><span class="o">);</span>
+    <span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="hygrometer-and-thermometer"><a class="anchor" href="#hygrometer-and-thermometer"></a>Hygrometer and thermometer</h4>
+<div class="paragraph">
+<p>Both sensory devices hygrometer and thermometer are very similar in essence. Both behave as devices, which
+generates data from the specified range with set distribution and are polled for such readings by the controlling software.
+In our case the differences between hygrometer and thermometer are only the units, mean of expectation and standard deviation.
+To emulate such behaviour <code>SimpleSensor</code> object is used with a data generator defined by Normal Distribution.</p>
+</div>
+<div class="listingblock">
+<div class="title">The definition of Thermometer</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Thermometer</span> <span class="kd">extends</span> <span class="nc">Sensor</span> <span class="kd">implements</span> <span class="nc">SimpleValueSensor</span><span class="o">&lt;</span><span class="nc">Float</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">DEFAULT_UNIT</span> <span class="o">=</span> <span class="s">"°C"</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">unit</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">DataFeed</span> <span class="n">dataFeed</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">NormalDistVariateDataFeed</span><span class="o">(</span><span class="mi">25</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+    <span class="kd">private</span> <span class="n">io</span><span class="o">.</span><span class="na">patriot_framework</span><span class="o">.</span><span class="na">generator</span><span class="o">.</span><span class="na">device</span><span class="o">.</span><span class="na">Device</span> <span class="n">device</span> <span class="o">=</span> <span class="k">new</span> <span class="n">io</span><span class="o">.</span><span class="na">patriot_framework</span><span class="o">.</span><span class="na">generator</span><span class="o">.</span><span class="na">device</span><span class="o">.</span><span class="na">impl</span><span class="o">.</span><span class="na">basicSensors</span><span class="o">.</span><span class="na">Thermometer</span><span class="o">(</span><span class="n">getLabel</span><span class="o">(),</span> <span class="n">dataFeed</span><span class="o">);</span>
+<span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As is seen in the example, the attribute device holds the object of Device kind, which is the basic type in the PatrIoT framework,
+then the <code>NormalDistVariateDataFeed</code> is used as the source of random data for measures of the temperature with mean of expectation being
+25 degrees Celsius and a standard deviation of 1. Generated data are then obtained by a call of method <code>getValue</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">getValue method of Thermometer</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Float</span> <span class="nf">getValue</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">device</span><span class="o">.</span><span class="na">requestData</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="nc">Double</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">floatValue</span><span class="o">();</span>
+    <span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The hygrometer is built in a very similar fashion, by use of the <code>Device</code> and <code>NormalDistVariateDataFeed</code>. Both of the devices
+are used as passive devices, which instead of producing and sending data are just polled by the controlling procedures,
+and processed later by the Apache Camel.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dht11-device"><a class="anchor" href="#dht11-device"></a>DHT11 Device</h4>
+<div class="paragraph">
+<p>The DHT11 Device represents a very common sensor, that unlike sensors mentioned above measures and generates
+two values per request. It measures both temperature and humidity at the same time. This kind of sensor is very
+common in the outdoor weather stations. Such a device is prepared in the set of standard devices and contained
+in the device generator part of the PatrIoT framework. The device definition then looks like:</p>
+</div>
+<div class="listingblock">
+<div class="title">DHT11 passive sensor definition</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DHT11Device</span> <span class="kd">extends</span> <span class="nc">Device</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="no">DHT11</span> <span class="n">device</span><span class="o">;</span>
+
+
+    <span class="kd">public</span> <span class="nf">DHT11Device</span><span class="o">(</span><span class="nc">String</span> <span class="n">label</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">label</span><span class="o">);</span>
+        <span class="nc">DataFeed</span> <span class="n">hygroDF</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">NormalDistVariateDataFeed</span><span class="o">(</span><span class="mi">50</span><span class="o">,</span> <span class="mi">30</span><span class="o">);</span>
+        <span class="nc">DataFeed</span> <span class="n">tempDF</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">NormalDistVariateDataFeed</span><span class="o">(</span><span class="mi">25</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
+        <span class="n">device</span> <span class="o">=</span> <span class="k">new</span> <span class="no">DHT11</span><span class="o">(</span><span class="s">"dht11"</span><span class="o">,</span> <span class="n">tempDF</span><span class="o">,</span> <span class="n">hygroDF</span><span class="o">);</span>
+    <span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As seen above the example uses directly <code>DHT11</code> kind of object which is imported from the PatrIoT framework,
+then the device is configured with two <code>DataFeed</code> objects to simulate both humidity and temperature. The methods
+to obtain data from such simulated device are very similar to the examples from Thermometer and Hygrometer.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="integration-tests"><a class="anchor" href="#integration-tests"></a>Integration tests</h3>
+<div class="paragraph">
+<p>The integration tests are written in PatrIoT with JUnit5 as the test execution engine and RESTassured library
+as a tool to easy develop and maintain the checks over the RESTfull API of both services in the SUT. Integration
+tests cover basic functions of the smart home and the gateway.
+The testing procedure can be split into the following phases:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Setup the network simulation and deploy it to the docker.</p>
+</li>
+<li>
+<p>Deploy the applications into the simulated environment and configure its connection into the networks.</p>
+</li>
+<li>
+<p>Obtain the basic data from the simulated environment and configure the test execution engine.</p>
+</li>
+<li>
+<p>Conduct testing of SUT.</p>
+</li>
+<li>
+<p>Once the testing is done, tear down the simulated environment and clean up.</p>
+</li>
+<li>
+<p>Generate reports with the test results for further evaluation.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="sut-setup-and-deployment"><a class="anchor" href="#sut-setup-and-deployment"></a>SUT setup and deployment</h4>
+<div class="paragraph">
+<p>In order to achieve the deployment that would happen at right time before the test execution engine is invoked,
+the <code>PatrIoTSetupExtension</code> is used to register the steps necessary that must happen before the testing can be
+conducted. In the case of smart home tests, this extension is implemented by class <code>EnvironmentSetup</code></p>
+</div>
+<div class="paragraph">
+<p>The <code>EnvironmentSetup</code> class is registered to the PatrIoT framework by specific configuration in <code>META-INF</code> resource, and
+is responsible to start the deployment into the docker and at the and of testing clean up the simulation.</p>
+</div>
+<div class="listingblock">
+<div class="title">Content of src/test/resources/META-INF/services/org.junit.jupiter.api.extension.Extension</div>
+<div class="content">
+<pre class="rouge highlight"><code>io.patriot_framework.samples.smarthome.utils.EnvironmentSetup</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The file shown above registers the extension into the JUnit context. The base abstract class PatriotSetupExtension is then
+connected to the JUnit&#8217;s lifecycle manager and responses to the specific events within the engine. In this case
+it executes method <code>setUp</code> when the JUnit is fully loaded but before the test execution. The <code>EnvironmentSetup</code> then
+creates an object of <code>DockerDeployment</code> kind, contains the actual definition of the SUT and of the simulated environment.</p>
+</div>
+<div class="paragraph">
+<p>The definition of the deployment starts with the network setup. This is done by the method <code>DockerDeployment::createTopology</code>.
+The method creates virtual networks within the docker context and deploys router component into it to set the visibility
+and routes between them.</p>
+</div>
+<div class="listingblock">
+<div class="title">The network topology definition in DockerDeployment::createTopology</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">        <span class="nc">Topology</span> <span class="n">top</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TopologyBuilder</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withCreator</span><span class="o">(</span><span class="s">"Docker"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withRouters</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withName</span><span class="o">(</span><span class="s">"Internal1"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">createRouter</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withName</span><span class="o">(</span><span class="s">"External1"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">createRouter</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">addRouters</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withNetwork</span><span class="o">(</span><span class="s">"SmartHome"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withIP</span><span class="o">(</span><span class="n">smartHomeNetwork</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withMask</span><span class="o">(</span><span class="mi">24</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withNetwork</span><span class="o">(</span><span class="s">"GatewayNetwork"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withIP</span><span class="o">(</span><span class="n">gatewayNetworkIP</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withMask</span><span class="o">(</span><span class="mi">24</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withNetwork</span><span class="o">(</span><span class="s">"BorderNetwork"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withInternet</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withRoutes</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"SmartHome"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"GatewayNetwork"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">viaRouter</span><span class="o">(</span><span class="s">"Internal1"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">addRoute</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"GatewayNetwork"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"BorderNetwork"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">viaRouter</span><span class="o">(</span><span class="s">"External1"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">addRoute</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"SmartHome"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"BorderNetwork"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">addRoute</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">buildRoutes</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The code above creates two networks called <code>SmartHome</code> and <code>GatewayNetwork</code>, it also defines <code>BorderNetwork</code> which represents
+connection to the real network with access to the internet. The networks are then interconnected by two routers.
+The router <code>Internal1</code> is responsible for communication between <code>SmartHome</code> and <code>GatewayNetwork</code>, and <code>External1</code> is
+responsible to connect <code>GatewayNetwork</code> to the <code>BorderNetwork</code>. As a result of the code above the topology, object representation is
+created.</p>
+</div>
+<div class="listingblock">
+<div class="title">Actual deployment of the topology in DockerDeployment::createTopology</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">        <span class="nc">DockerController</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DockerController</span><span class="o">();</span>
+        <span class="n">getHub</span><span class="o">().</span><span class="na">getManager</span><span class="o">().</span><span class="na">setControllers</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">c</span><span class="o">));</span>
+        <span class="n">getHub</span><span class="o">().</span><span class="na">deployTopology</span><span class="o">(</span><span class="n">top</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The code above is then responsible to register the <code>DockerController</code> to the shared context of the PatrIoT via the <code>PatriotHub</code> singleton
+and requests the topology to be deployed into the docker. The <code>getHub</code> method is used as a safe wrapper around the <code>PatriotHub::getSingleton()</code>
+method.</p>
+</div>
+<div class="paragraph">
+<p>With the topology created and connected the applications can be started. In our case, the deployment of applications is done
+by method <code>DockerDeployment::deployApplications</code>. As explained above our goal is to deploy two applications <code>virtual smart home</code> and
+<code>smart gateway</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Creation of Application objects.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">    <span class="kt">void</span> <span class="nf">deployApplications</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">Application</span> <span class="n">smartHome</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Application</span><span class="o">(</span><span class="s">"smarthome"</span><span class="o">,</span> <span class="s">"Docker"</span><span class="o">);</span>
+        <span class="nc">Application</span> <span class="n">gateway</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Application</span><span class="o">(</span><span class="s">"gateway"</span><span class="o">,</span> <span class="s">"Docker"</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As is seen in the code, the deployment is started by the creation of <code>Application</code> objects. These objects are the
+main interface to interact with containers deployed into the simulated environment. Once the applications are created,
+the deployment can start.</p>
+</div>
+<div class="listingblock">
+<div class="title">Deployment of virtual smart home into the virtual environment and extraction of containers ip address</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">        <span class="n">getHub</span><span class="o">().</span><span class="na">deployApplication</span><span class="o">(</span><span class="n">smartHome</span><span class="o">,</span> <span class="s">"SmartHome"</span><span class="o">,</span> <span class="s">"smarthome"</span><span class="o">);</span>
+
+        <span class="nc">String</span> <span class="n">ip</span> <span class="o">=</span> <span class="n">smartHome</span><span class="o">.</span><span class="na">getAddressForNetwork</span><span class="o">(</span><span class="s">"SmartHome"</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since the smart gateway needs to know where the virtual smart home is deployed, it is essential to
+ensure that the virtual smart home is deployed first and its ip address is known. That is done by call
+of <code>deployApplication</code> method from <code>PatriotHub</code>. The method is invoked with three arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>smartHome</code> object of the virtual smart home application</p>
+</li>
+<li>
+<p><code>"SmartHome"</code> the name of a primary network where should be the application deployed.</p>
+</li>
+<li>
+<p><code>"smarthome"</code> tag of the docker image which will be deployed as such application.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After the deployment is finished, the container is created and the application starts. This is the
+time when the IP address of the docker container can be obtained. To achieve it, the <code>Application</code> object
+is used, which contains all of the identifiers to get the IP from the docker daemon.</p>
+</div>
+<div class="listingblock">
+<div class="title">Deployment of the smart gateway with the configuration of a virtual smart home IP address</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">        <span class="n">getHub</span><span class="o">().</span><span class="na">deployApplication</span><span class="o">(</span><span class="n">gateway</span><span class="o">,</span>
+                <span class="s">"GatewayNetwork"</span><span class="o">,</span>
+                <span class="s">"patriotframework/smart-gateway"</span><span class="o">,</span>
+                <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+                        <span class="s">"IOT_HOST="</span> <span class="o">+</span> <span class="n">ip</span> <span class="o">+</span> <span class="s">":8282"</span><span class="o">,</span>
+                        <span class="s">"IOT_WS_HOST="</span> <span class="o">+</span> <span class="n">ip</span> <span class="o">+</span> <span class="s">":9292"</span>
+                <span class="o">));</span>
+
+        <span class="no">LOGGER</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Sleeping for 30 to wait for deployments to finish."</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="nc">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">30000</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">InterruptedException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="no">LOGGER</span><span class="o">.</span><span class="na">warn</span><span class="o">(</span><span class="s">"Error in while sleeping"</span><span class="o">,</span> <span class="n">ex</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As the last step of the deployment, the smart gateway can be deployed. In this instance the method
+<code>deployApplicaton</code> is invoked with four instead of three arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>gateway</code> object of the smart gateway application.</p>
+</li>
+<li>
+<p><code>"GatewayNetwork"</code> the primary network where the smart gateway should be connected.</p>
+</li>
+<li>
+<p><code>"patriotframework/smart-gateway"</code> the container image tag to be used deployed.</p>
+</li>
+<li>
+<p>List of environment variables defined as strings. Here we are declaring how the smart gateway should connect to the virtual smart home.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once these steps are performed, the main execution thread is paused for 30 seconds to ensure that the applications are started
+before the tests can proceed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-basic-test-scenarios-for-virtual-smart-home"><a class="anchor" href="#the-basic-test-scenarios-for-virtual-smart-home"></a>The basic test scenarios for virtual smart home</h4>
+<div class="paragraph">
+<p>At this phase the of the process the testing can begin and the test classes are created. The most simple test that would be executed
+is defined in the <code>FirePlaceTest</code> class. This class is extending the abstract base class <code>SmartHomeBase</code> which holds the common
+configurations for the virtual smart home-related tests. The base class contains the <code>BeforeAll</code> method named <code>init</code> which is executed
+prior to the start of any test within the test class.</p>
+</div>
+<div class="listingblock">
+<div class="title">init method of SmartHomeBase abstract class</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">    <span class="nd">@BeforeAll</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">()</span> <span class="o">{</span>
+        <span class="no">LOGGER</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">"Instantiation of test base class"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">address</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">address</span> <span class="o">=</span> <span class="nc">PatriotHub</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getApplication</span><span class="o">(</span><span class="s">"smarthome"</span><span class="o">).</span><span class="na">getAddressForNetwork</span><span class="o">(</span><span class="s">"SmartHome"</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">PropertiesNotLoadedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="no">LOGGER</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"Couldn't load properties file"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">RestAssured</span><span class="o">.</span><span class="na">baseURI</span> <span class="o">=</span> <span class="s">"http://"</span> <span class="o">+</span> <span class="n">address</span><span class="o">;</span>
+        <span class="nc">RestAssured</span><span class="o">.</span><span class="na">port</span> <span class="o">=</span> <span class="mi">8282</span><span class="o">;</span>
+        <span class="nc">RestAssured</span><span class="o">.</span><span class="na">defaultParser</span> <span class="o">=</span> <span class="nc">Parser</span><span class="o">.</span><span class="na">JSON</span><span class="o">;</span>
+    <span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The code above is responsible for the configuration of shared context used by RestAssured library. In this case, it obtains
+the <code>IP</code> address of the virtual smart home and configures it as a base URI for the RestAssuret to test against. As can be seen
+the <code>PatriotHub</code> is used again to get the <code>Application</code> object of the virtual smart home and use it for IP extraction.</p>
+</div>
+<div class="paragraph">
+<p>The fireplace test itself is then quite simple. Our goal is to test that once we request the virtual smart home to turn on
+the fireplace it will respond to us with the correct message that the fireplace was turned on.</p>
+</div>
+<div class="listingblock">
+<div class="title">The example test of fireplace</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testTheSwitchingFireplace</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">given</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">basePath</span><span class="o">(</span><span class="s">"/fireplace/on"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">when</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">then</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">statusCode</span><span class="o">(</span><span class="mi">200</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">and</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"enabled"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="kc">true</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"label"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="s">"fireplace"</span><span class="o">));</span>
+    <span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since the base URI was configured in the RestAssured static context, it is only needed to configure which endpoint
+of the API will be invoked. The HTTP method GET is used with the path <code>/fireplace/on</code>. The test then expects, that
+the status code of response will be equal to 200 <code>HTTP.OK</code> and the body of the response will contain JSON object with
+two attributes <code>{"enabled": true, "label":"fireplace"}</code>. In case any of those assumptions is not met, the
+test will be marked as a failure.</p>
+</div>
+<div class="paragraph">
+<p>The next test that is implemented is a test of the reset endpoint. This endpoint of the smart home is responsible to
+set all of the actuators to the default state:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Windows and doors are closed.</p>
+</li>
+<li>
+<p>Fireplace is turned off.</p>
+</li>
+<li>
+<p>All of the led diodes are turned off.</p>
+</li>
+<li>
+<p>AC turned off.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first steps of the test are to change the state of several devices out of the default state. In this case
+it opens a window and turns fireplace on. Then it verifies that the actions were performed and the virtual smart home
+is in the desired state.</p>
+</div>
+<div class="listingblock">
+<div class="title">The setup steps of the reset test</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">        <span class="n">given</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">basePath</span><span class="o">(</span><span class="s">"/window/open"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">when</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">then</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">statusCode</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
+
+        <span class="n">waitOneSec</span><span class="o">();</span>
+
+        <span class="n">given</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">basePath</span><span class="o">(</span><span class="s">"/window"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">when</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">then</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">statusCode</span><span class="o">(</span><span class="mi">200</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">and</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"state"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="s">"Open"</span><span class="o">));</span>
+
+        <span class="n">given</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">basePath</span><span class="o">(</span><span class="s">"/fireplace/on"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">when</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">then</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">statusCode</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the state is verified, the <code>/reset</code> endpoint can be requested and then the verification of state can proceed.
+For the verification of the state, the <code>/all</code> endpoint of the virtual smart home is used. This endpoint contains all of the
+sensors and actuators and their state or measured value. In this particular case, it is expected that the window
+will be in state <code>Closing</code> and the <code>fireplace</code> will be off.</p>
+</div>
+<div class="listingblock">
+<div class="title">The request to reset endpoint and verification of the state afterwards</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">given</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">basePath</span><span class="o">(</span><span class="s">"/reset"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">when</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">then</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">statusCode</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
+
+        <span class="n">given</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">basePath</span><span class="o">(</span><span class="s">"/all"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">when</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">then</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">statusCode</span><span class="o">(</span><span class="mi">200</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">and</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[0].label"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="s">"rear-door"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[0].state"</span><span class="o">,</span> <span class="n">startsWith</span><span class="o">(</span><span class="s">"Closing"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[1].label"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="s">"fireplace"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[1].enabled"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="kc">false</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[12].label"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="s">"air-conditioner"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[12].enabled"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="kc">false</span><span class="o">));</span>
+
+        <span class="n">waitOneSec</span><span class="o">();</span>
+
+        <span class="n">given</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">basePath</span><span class="o">(</span><span class="s">"/window"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">when</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">then</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">statusCode</span><span class="o">(</span><span class="mi">200</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">and</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"state"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="s">"Closed"</span><span class="o">));</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The last test implemented in this example is test of cooperation between the virtual smart home and
+smart gateway. The test simulates one of the endpoints of smart gateways used by mobile app. The scenario
+is simple, to open the front door by requesting the gateway. In this particular case, the endpoint <code>/mobile</code> of
+smart gateway with query parameter <code>button=7</code> must be delivered to the smart gateway and then the virtual
+smart home must instructed to open the front door.</p>
+</div>
+<div class="paragraph">
+<p>Hence in this scenario two separate <code>Applications</code> will be needed, the smart gateway to order the command and
+virtual smart home to check if the action was performed.</p>
+</div>
+<div class="listingblock">
+<div class="title">The test of the smart gateway doorOpenTest</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">RequestSpecification</span> <span class="nf">getRequest</span><span class="o">(</span><span class="nc">String</span> <span class="n">appName</span><span class="o">,</span> <span class="nc">String</span> <span class="n">networkName</span><span class="o">,</span> <span class="kt">int</span> <span class="n">port</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="nf">given</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">baseUri</span><span class="o">(</span><span class="s">"http://"</span> <span class="o">+</span>
+                             <span class="nc">PatriotHub</span><span class="o">.</span><span class="na">getInstance</span><span class="o">()</span>
+                                       <span class="o">.</span><span class="na">getApplication</span><span class="o">(</span><span class="n">appName</span><span class="o">)</span>
+                                       <span class="o">.</span><span class="na">getAddressForNetwork</span><span class="o">(</span><span class="n">networkName</span><span class="o">))</span>
+                    <span class="o">.</span><span class="na">port</span><span class="o">(</span><span class="n">port</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doorOpenTest</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">RestAssured</span><span class="o">.</span><span class="na">defaultParser</span> <span class="o">=</span> <span class="nc">Parser</span><span class="o">.</span><span class="na">JSON</span><span class="o">;</span>
+        <span class="nc">RequestSpecification</span> <span class="n">home</span> <span class="o">=</span> <span class="n">getRequest</span><span class="o">(</span><span class="s">"smarthome"</span><span class="o">,</span> <span class="s">"SmartHome"</span><span class="o">,</span> <span class="mi">8282</span><span class="o">);</span>
+        <span class="nc">RequestSpecification</span> <span class="n">gateway</span> <span class="o">=</span> <span class="n">getRequest</span><span class="o">(</span><span class="s">"gateway"</span><span class="o">,</span> <span class="s">"GatewayNetwork"</span><span class="o">,</span> <span class="mi">8283</span><span class="o">);</span>
+
+        <span class="n">gateway</span><span class="o">.</span><span class="na">basePath</span><span class="o">(</span><span class="s">"/mobile"</span><span class="o">)</span>
+                 <span class="o">.</span><span class="na">param</span><span class="o">(</span><span class="s">"button"</span><span class="o">,</span> <span class="s">"7"</span><span class="o">)</span>
+               <span class="o">.</span><span class="na">when</span><span class="o">()</span>
+                 <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+               <span class="o">.</span><span class="na">then</span><span class="o">()</span>
+                 <span class="o">.</span><span class="na">statusCode</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
+        <span class="n">home</span><span class="o">.</span><span class="na">basePath</span><span class="o">(</span><span class="s">"/door"</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">when</span><span class="o">()</span>
+              <span class="o">.</span><span class="na">get</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">then</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">statusCode</span><span class="o">(</span><span class="mi">200</span><span class="o">)</span>
+              <span class="o">.</span><span class="na">and</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"label"</span><span class="o">,</span> <span class="n">equalTo</span><span class="o">(</span><span class="s">"front-door"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"state"</span><span class="o">,</span> <span class="n">startsWith</span><span class="o">(</span><span class="s">"Opening"</span><span class="o">));</span>
+    <span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In case above the place where the helper function <code>getRequest</code> is used to communicate with <code>PatriotHub</code> and obtain ip address
+of selected application and encapsulates this IP address into the form of <code>RequestSpecification</code> which is internal object
+of REST assured. Since now we have object ready to be used by REST assured we can straight away perform the tests. As explained above,
+as first we request the the <code>mobile</code> endpoint to open the door, where we expect response with status code 200 <code>HTTP.OK</code> and
+then using the <code>home</code> RequestSpecification we check if the action was performed.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   <script src="../../latest/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+   <script type="text/javascript">
+       /*<![CDATA[*/
+       $(document).ready(function() {
+           $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+               if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+                   $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+               }
+           });
+           $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+               if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+                   $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+               }
+           });
+           $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+               $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+           });
+           $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+               $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+           });
+       });
+       /*]]>*/
+   </script>
+</body>
+</html>

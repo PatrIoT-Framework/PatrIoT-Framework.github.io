@@ -94,6 +94,7 @@
       </a>
       <ul id="topicGroup1" class="collapse  list-unstyled">
             <li><a class="" href="../docs/framework.html">General information</a></li>
+            <li><a class="" href="../docs/getting-started.html">Getting started guide</a></li>
       </ul>
     </li>
     <li class="nav-header">
@@ -110,6 +111,7 @@
       </a>
       <ul id="topicGroup3" class="collapse  list-unstyled">
             <li><a class="" href="../docs/network-sim.html">Network simulation</a></li>
+            <li><a class="" href="../docs/multihost.html">Support for multihost</a></li>
       </ul>
     </li>
     <li class="nav-header">
@@ -118,6 +120,15 @@
       </a>
       <ul id="topicGroup4" class="collapse  list-unstyled">
             <li><a class="" href="../docs/data-generator.html">Data Generator</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup5">
+        <span id="tgSpan5" class="fa fa-angle-right"></span>Advanced topics
+      </a>
+      <ul id="topicGroup5" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/building-sources.html">Building sources</a></li>
+            <li><a class="" href="../docs/smarthome-guide.html">Smart home tests</a></li>
       </ul>
     </li>
 </ul>
@@ -199,13 +210,13 @@ expected to execute simple Test Case and by assertions signal the Test Runner ab
 <div id="simple-test" class="listingblock">
 <div class="title">Basic test using plain JUnit</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">ArithmeticsTest</span> {
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ArithmeticsTest</span> <span class="o">{</span>
 
-    <span style="color:#007">@Test</span>
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> testAdd() {
-        assertEquals(<span style="color:#00D">1</span> + <span style="color:#00D">1</span>, <span style="color:#00D">2</span>);
-    }
-}</code></pre>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testAdd</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">assertEquals</span><span class="o">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -286,37 +297,37 @@ that need to be run once before the tests are conducted.</p>
 <div id="setup-class-instance" class="listingblock">
 <div class="title">Basic setup class</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">package</span> <span style="color:#707;font-weight:bold">test</span>;
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">test</span><span class="o">;</span>
 
-<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.patriot_framework.junit.extensions.SetupExtension</span>;
-<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">java.util.UUID</span>;
+<span class="kn">import</span> <span class="nn">io.patriot_framework.junit.extensions.SetupExtension</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.UUID</span><span class="o">;</span>
 
-<span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">BasicSetup</span> <span style="color:#088;font-weight:bold">extends</span> SetupExtension {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BasicSetup</span> <span class="kd">extends</span> <span class="nc">SetupExtension</span> <span class="o">{</span>
 
-    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#0a8;font-weight:bold">UUID</span> uuid = <span style="color:#0a8;font-weight:bold">UUID</span>.randomUUID();
-    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#339;font-weight:bold">boolean</span> configured = <span style="color:#069">false</span>;
+    <span class="kd">private</span> <span class="kd">static</span> <span class="no">UUID</span> <span class="n">uuid</span> <span class="o">=</span> <span class="no">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="n">configured</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
 
-    <span style="color:#007">@Override</span>
-    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#339;font-weight:bold">boolean</span> isSetUp() {
-        <span style="color:#080;font-weight:bold">return</span> configured;
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">boolean</span> <span class="nf">isSetUp</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">configured</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span style="color:#007">@Override</span>
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> setUp() {
-        configured = <span style="color:#069">true</span>;
-        <span style="color:#777">//do the actual configuration</span>
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">configured</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="c1">//do the actual configuration</span>
+    <span class="o">}</span>
 
-    <span style="color:#007">@Override</span>
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> tearDown() {
-        <span style="color:#777">//clean up</span>
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//clean up</span>
+    <span class="o">}</span>
 
-    <span style="color:#007">@Override</span>
-    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#0a8;font-weight:bold">UUID</span> getUUID() {
-        <span style="color:#080;font-weight:bold">return</span> uuid;
-    }
-}</code></pre>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="no">UUID</span> <span class="nf">getUUID</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">uuid</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -326,7 +337,7 @@ must be registered in the <code>META-INF/services/org.junit.jupiter.api.extensio
 <div class="listingblock">
 <div class="title">META-INF/services/org.junit.jupiter.api.extension.Extension</div>
 <div class="content">
-<pre class="CodeRay highlight"><code>test.BasicSetup</code></pre>
+<pre class="rouge highlight"><code>test.BasicSetup</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -338,37 +349,37 @@ must be registered in the <code>META-INF/services/org.junit.jupiter.api.extensio
 <div id="simple-provisioner" class="listingblock">
 <div class="title">Provisioner for PatrIoT framework</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">package</span> <span style="color:#707;font-weight:bold">test</span>;
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">test</span><span class="o">;</span>
 
-<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.patriot_framework.junit.extensions.SetupExtension</span>;
-<span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">java.util.UUID</span>;
+<span class="kn">import</span> <span class="nn">io.patriot_framework.junit.extensions.SetupExtension</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.UUID</span><span class="o">;</span>
 
-<span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">SimpleProvisioner</span> <span style="color:#088;font-weight:bold">extends</span> PatriotSetupExtension {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleProvisioner</span> <span class="kd">extends</span> <span class="nc">PatriotSetupExtension</span> <span class="o">{</span>
 
-    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#0a8;font-weight:bold">UUID</span> uuid = <span style="color:#0a8;font-weight:bold">UUID</span>.randomUUID();
-    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span style="color:#339;font-weight:bold">boolean</span> configured = <span style="color:#069">false</span>;
+    <span class="kd">private</span> <span class="kd">static</span> <span class="no">UUID</span> <span class="n">uuid</span> <span class="o">=</span> <span class="no">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">();</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="n">configured</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
 
-    <span style="color:#007">@Override</span>
-    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#339;font-weight:bold">boolean</span> isSetUp() {
-        <span style="color:#080;font-weight:bold">return</span> configured;
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">boolean</span> <span class="nf">isSetUp</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">configured</span><span class="o">;</span>
+    <span class="o">}</span>
 
-    <span style="color:#007">@Override</span>
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> setUp() {
-        configured = <span style="color:#069">true</span>;
-        PatriotHub hub =
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUp</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">configured</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="nc">PatriotHub</span> <span class="n">hub</span> <span class="o">=</span>
+    <span class="o">}</span>
 
-    <span style="color:#007">@Override</span>
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">void</span> tearDown() {
-        <span style="color:#777">//clean up</span>
-    }
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">tearDown</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//clean up</span>
+    <span class="o">}</span>
 
-    <span style="color:#007">@Override</span>
-    <span style="color:#088;font-weight:bold">protected</span> <span style="color:#0a8;font-weight:bold">UUID</span> getUUID() {
-        <span style="color:#080;font-weight:bold">return</span> uuid;
-    }
-}</code></pre>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="no">UUID</span> <span class="nf">getUUID</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">uuid</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
@@ -410,22 +421,22 @@ and <code>ServiceCommunicatesWithApiTest</code>, then execution of second Test C
 <div class="listingblock">
 <div class="title">Usage of ConditionalDisaledExtension</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#339;font-weight:bold">class</span>  <span style="color:#B06;font-weight:bold">ServiceIsUpAndRunningTest</span>{
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span>  <span class="nc">ServiceIsUpAndRunningTest</span><span class="o">{</span>
 
-    <span style="color:#007">@Test</span>
-    <span style="color:#339;font-weight:bold">void</span> testServiceIsUp() {
-        <span style="color:#777">// some connection</span>
-    }
-}
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">testServiceIsUp</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// some connection</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 
-<span style="color:#007">@DisableByState</span>(ServiceIsUpAndRunningTest.class, TestResultState.FAILED)
-<span style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">ServiceCommunicatesWithApiTest</span> {
+<span class="nd">@DisableByState</span><span class="o">(</span><span class="nc">ServiceIsUpAndRunningTest</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="nc">TestResultState</span><span class="o">.</span><span class="na">FAILED</span><span class="o">)</span>
+<span class="kd">class</span> <span class="nc">ServiceCommunicatesWithApiTest</span> <span class="o">{</span>
 
-    <span style="color:#007">@Test</span>
-    <span style="color:#339;font-weight:bold">void</span> testThatAPIReadsService() {
-        <span style="color:#777">//test the API</span>
-    }
-}</code></pre>
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">testThatAPIReadsService</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//test the API</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -439,7 +450,7 @@ from execution.</p>
 <div class="listingblock">
 <div class="title">META-INF/services/org.junit.jupiter.api.extension.Extension</div>
 <div class="content">
-<pre class="CodeRay highlight"><code>io.patriot_framework.junit.extensions.ConditionalDisableExtension</code></pre>
+<pre class="rouge highlight"><code>io.patriot_framework.junit.extensions.ConditionalDisableExtension</code></pre>
 </div>
 </div>
 </div>
@@ -585,10 +596,10 @@ Best way how to deploy Graylog stack is via docker-compose. First step of deploy
 <div class="listingblock">
 <div class="title">Install docker-compose</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-docker-compose --version</code></pre>
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">sudo </span>curl <span class="nt">-L</span> <span class="s2">"https://github.com/docker/compose/releases/download/1.24.0/docker-compose-</span><span class="si">$(</span><span class="nb">uname</span> <span class="nt">-s</span><span class="si">)</span><span class="s2">-</span><span class="si">$(</span><span class="nb">uname</span> <span class="nt">-m</span><span class="si">)</span><span class="s2">"</span> <span class="nt">-o</span> /usr/local/bin/docker-compose
+<span class="nb">sudo chmod</span> +x /usr/local/bin/docker-compose
+<span class="nb">sudo ln</span> <span class="nt">-s</span> /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker-compose <span class="nt">--version</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -598,54 +609,54 @@ administration and user password to Graylog node.</p>
 <div class="listingblock">
 <div class="title">Docker-compose.yml</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span style="color:#606">version</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">'2'</span></span>
-<span style="color:#606">services</span>:
-  <span style="color:#777"># MongoDB: https://hub.docker.com/_/mongo/</span>
-  <span style="color:#606">mongodb</span>:
-    <span style="color:#606">image</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">mongo:3</span></span>
-  <span style="color:#777"># Elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docker.html</span>
-  <span style="color:#606">elasticsearch</span>:
-    <span style="color:#606">image</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">docker.elastic.co/elasticsearch/elasticsearch:5.6.3</span></span>
-    <span style="color:#606">environment</span>:
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">http.host=0.0.0.0</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">transport.host=localhost</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">network.host=0.0.0.0</span></span>
-      <span style="color:#777"># Disable X-Pack security: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/security-settings.html#general-security-settings</span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">xpack.security.enabled=false</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">ES_JAVA_OPTS=-Xms512m -Xmx512m</span><span style="color:#710">&quot;</span></span>
-    <span style="color:#606">ports</span>:
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">9200:9200</span></span>
-    <span style="color:#606">ulimits</span>:
-      <span style="color:#606">memlock</span>:
-        <span style="color:#606">soft</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">-1</span></span>
-        <span style="color:#606">hard</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">-1</span></span>
-    <span style="color:#606">mem_limit</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">1g</span></span>
-  <span style="color:#777"># Graylog: https://hub.docker.com/r/graylog/graylog/</span>
-  <span style="color:#606">graylog</span>:
-    <span style="color:#606">image</span>: <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">graylog/graylog:2.4.0-1</span></span>
-    <span style="color:#606">environment</span>:
-      <span style="color:#777"># CHANGE ME!</span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">GRAYLOG_PASSWORD_SECRET=somepasswordpepper</span></span>
-      <span style="color:#777"># Password: admin</span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">GRAYLOG_WEB_ENDPOINT_URI=http://127.0.0.1:9000/api</span></span>
-    <span style="color:#606">links</span>:
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">mongodb:mongo</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">elasticsearch</span></span>
-    <span style="color:#606">depends_on</span>:
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">mongodb</span></span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">elasticsearch</span></span>
-    <span style="color:#606">ports</span>:
-      <span style="color:#777"># Graylog web interface and REST API</span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">9000:9000</span></span>
-      <span style="color:#777"># Syslog TCP</span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">514:514</span></span>
-      <span style="color:#777"># Syslog UDP</span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">514:514/udp</span></span>
-      <span style="color:#777"># GELF TCP</span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">12201:12201</span></span>
-      <span style="color:#777"># GELF UDP</span>
-      - <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#D20">12201:12201/udp</span></span></code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2'</span>
+<span class="na">services</span><span class="pi">:</span>
+  <span class="c1"># MongoDB: https://hub.docker.com/_/mongo/</span>
+  <span class="na">mongodb</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">mongo:3</span>
+  <span class="c1"># Elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docker.html</span>
+  <span class="na">elasticsearch</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">docker.elastic.co/elasticsearch/elasticsearch:5.6.3</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">http.host=0.0.0.0</span>
+      <span class="pi">-</span> <span class="s">transport.host=localhost</span>
+      <span class="pi">-</span> <span class="s">network.host=0.0.0.0</span>
+      <span class="c1"># Disable X-Pack security: https://www.elastic.co/guide/en/elasticsearch/reference/5.6/security-settings.html#general-security-settings</span>
+      <span class="pi">-</span> <span class="s">xpack.security.enabled=false</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">ES_JAVA_OPTS=-Xms512m</span><span class="nv"> </span><span class="s">-Xmx512m"</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">9200:9200</span>
+    <span class="na">ulimits</span><span class="pi">:</span>
+      <span class="na">memlock</span><span class="pi">:</span>
+        <span class="na">soft</span><span class="pi">:</span> <span class="s">-1</span>
+        <span class="na">hard</span><span class="pi">:</span> <span class="s">-1</span>
+    <span class="na">mem_limit</span><span class="pi">:</span> <span class="s">1g</span>
+  <span class="c1"># Graylog: https://hub.docker.com/r/graylog/graylog/</span>
+  <span class="na">graylog</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">graylog/graylog:2.4.0-1</span>
+    <span class="na">environment</span><span class="pi">:</span>
+      <span class="c1"># CHANGE ME!</span>
+      <span class="pi">-</span> <span class="s">GRAYLOG_PASSWORD_SECRET=somepasswordpepper</span>
+      <span class="c1"># Password: admin</span>
+      <span class="pi">-</span> <span class="s">GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</span>
+      <span class="pi">-</span> <span class="s">GRAYLOG_WEB_ENDPOINT_URI=http://127.0.0.1:9000/api</span>
+    <span class="na">links</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">mongodb:mongo</span>
+      <span class="pi">-</span> <span class="s">elasticsearch</span>
+    <span class="na">depends_on</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">mongodb</span>
+      <span class="pi">-</span> <span class="s">elasticsearch</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="c1"># Graylog web interface and REST API</span>
+      <span class="pi">-</span> <span class="s">9000:9000</span>
+      <span class="c1"># Syslog TCP</span>
+      <span class="pi">-</span> <span class="s">514:514</span>
+      <span class="c1"># Syslog UDP</span>
+      <span class="pi">-</span> <span class="s">514:514/udp</span>
+      <span class="c1"># GELF TCP</span>
+      <span class="pi">-</span> <span class="s">12201:12201</span>
+      <span class="c1"># GELF UDP</span>
+      <span class="pi">-</span> <span class="s">12201:12201/udp</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -683,7 +694,7 @@ administration and user password to Graylog node.</p>
 <div class="listingblock">
 <div class="title">Start compose</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker-compose up</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">docker-compose up</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -692,7 +703,7 @@ administration and user password to Graylog node.</p>
 <div class="listingblock">
 <div class="title">Remove stack</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker-compose down</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">docker-compose down</code></pre>
 </div>
 </div>
 </div>
@@ -704,7 +715,7 @@ administration and user password to Graylog node.</p>
 <div class="listingblock">
 <div class="title">Pull Elasticsearch image</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker pull sebp/elk:latest</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">docker pull sebp/elk:latest</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -714,13 +725,13 @@ But first create empty directory for our configuration file.</p>
 <div class="listingblock">
 <div class="title">Create empty directory</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">mkdir logstash</code></pre>
+<pre class="rouge highlight"><code data-lang="shell"><span class="nb">mkdir </span>logstash</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Create logstash.conf for logstash</div>
 <div class="content">
-<pre class="CodeRay highlight"><code>input {
+<pre class="rouge highlight"><code>input {
     gelf {
         port =&gt; 12201
         type =&gt; gelf
@@ -740,18 +751,18 @@ Dockerfile should be located in same directory as configuration file.</p>
 <div class="listingblock">
 <div class="title">Start Elasticsearch container</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="dockerfile">FROM sebp/elk
-ADD logstash.conf /etc/logstash/conf.d/30-output.conf
+<pre class="rouge highlight"><code data-lang="dockerfile"><span class="k">FROM</span><span class="s"> sebp/elk</span>
+<span class="k">ADD</span><span class="s"> logstash.conf /etc/logstash/conf.d/30-output.conf</span>
 
-WORKDIR ${LOGSTASH_HOME}
-RUN gosu logstash bin/logstash-plugin install logstash-input-gelf</code></pre>
+<span class="k">WORKDIR</span><span class="s"> ${LOGSTASH_HOME}</span>
+<span class="k">RUN </span>gosu logstash bin/logstash-plugin <span class="nb">install </span>logstash-input-gelf</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Start Elasticsearch container</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker build -t elastic-gelf CONFIGURATION_DIR
-docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -p 12201:12201/udp -it --name elk elastic-gelf</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">docker build <span class="nt">-t</span> elastic-gelf CONFIGURATION_DIR
+docker run <span class="nt">-p</span> 5601:5601 <span class="nt">-p</span> 9200:9200 <span class="nt">-p</span> 5044:5044 <span class="nt">-p</span> 12201:12201/udp <span class="nt">-it</span> <span class="nt">--name</span> elk elastic-gelf</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -784,13 +795,13 @@ to Elasticsearch from the Docker platform. The IP address of running container c
 <div class="listingblock">
 <div class="title">Obtain Container IP address</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${NAME_OF_ELASTIC_STACK}</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">docker inspect <span class="nt">--format</span> <span class="s1">'{{ .NetworkSettings.IPAddress }}'</span> <span class="k">${</span><span class="nv">NAME_OF_ELASTIC_STACK</span><span class="k">}</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">patriot.properties</div>
 <div class="content">
-<pre class="CodeRay highlight"><code>io.patriot_framework.monitoring.addr=192.168.12.12
+<pre class="rouge highlight"><code>io.patriot_framework.monitoring.addr=192.168.12.12
 io.patriot_framework.monitoring.port=12201</code></pre>
 </div>
 </div>

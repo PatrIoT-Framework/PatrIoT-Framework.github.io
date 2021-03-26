@@ -94,6 +94,7 @@
       </a>
       <ul id="topicGroup1" class="collapse  list-unstyled">
             <li><a class="" href="../docs/framework.html">General information</a></li>
+            <li><a class="" href="../docs/getting-started.html">Getting started guide</a></li>
       </ul>
     </li>
     <li class="nav-header">
@@ -110,6 +111,7 @@
       </a>
       <ul id="topicGroup3" class="collapse show in list-unstyled">
             <li><a class="active" href="../docs/network-sim.html">Network simulation</a></li>
+            <li><a class="" href="../docs/multihost.html">Support for multihost</a></li>
       </ul>
     </li>
     <li class="nav-header">
@@ -118,6 +120,15 @@
       </a>
       <ul id="topicGroup4" class="collapse  list-unstyled">
             <li><a class="" href="../docs/data-generator.html">Data Generator</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup5">
+        <span id="tgSpan5" class="fa fa-angle-right"></span>Advanced topics
+      </a>
+      <ul id="topicGroup5" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/building-sources.html">Building sources</a></li>
+            <li><a class="" href="../docs/smarthome-guide.html">Smart home tests</a></li>
       </ul>
     </li>
 </ul>
@@ -206,7 +217,7 @@ up and control its behavior.</p>
 <div class="listingblock">
 <div class="title">Building router Docker image</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker pull patriotframework/patriot-router:latest</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">docker pull patriotframework/patriot-router:latest</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -228,20 +239,20 @@ to topology.</p>
 <div class="listingblock">
 <div class="title">Pulling application base image</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker pull patriotframework/simulator-base:latest</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">docker pull patriotframework/simulator-base:latest</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Updating Dockerfile</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="dockerfile">FROM patriotframework/simulator-base:latest
-CMD[&quot;java&quot;, &quot;-jar&quot;, &quot;generator.jar&quot;, &quot;-c&quot;, &quot;config.yaml&quot;]</code></pre>
+<pre class="rouge highlight"><code data-lang="dockerfile"><span class="k">FROM</span><span class="s"> patriotframework/simulator-base:latest</span>
+<span class="k">CMD</span><span class="s">["java", "-jar", "generator.jar", "-c", "config.yaml"]</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Building docker image</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="shell">docker build -t MY_TAG DOCKERFILE_DIRECTORY</code></pre>
+<pre class="rouge highlight"><code data-lang="shell">docker build <span class="nt">-t</span> MY_TAG DOCKERFILE_DIRECTORY</code></pre>
 </div>
 </div>
 </div>
@@ -292,8 +303,8 @@ name of type <code>String</code>.  For later use, these Router objects can be bu
 <div class="listingblock">
 <div class="title">Creation of router</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.patriot_framework.network.simulator.api.model.devices.router.RouterImpl</span>;
-RouterImpl r = <span style="color:#080;font-weight:bold">new</span> RouterIml(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TRt</span><span style="color:#710">&quot;</span></span>)</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">io.patriot_framework.network.simulator.api.model.devices.router.RouterImpl</span><span class="o">;</span>
+<span class="nc">RouterImpl</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RouterIml</span><span class="o">(</span><span class="s">"TRt"</span><span class="o">)</span></code></pre>
 </div>
 </div>
 </div>
@@ -328,9 +339,9 @@ be set to <code>true</code>.</p>
 <div class="listingblock">
 <div class="title">Initialization of Network object</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">import</span> <span style="color:#B44;font-weight:bold">io.patriot_framework.network.simulator.api.model.network.TopologyNetwork</span>;
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">import</span> <span class="nn">io.patriot_framework.network.simulator.api.model.network.TopologyNetwork</span><span class="o">;</span>
 
-TopologyNetwork tNet = <span style="color:#080;font-weight:bold">new</span> TopologyNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Teacher</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.0.0</span><span style="color:#710">&quot;</span></span>, <span style="color:#00D">28</span>);</code></pre>
+<span class="nc">TopologyNetwork</span> <span class="n">tNet</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TopologyNetwork</span><span class="o">(</span><span class="s">"Teacher"</span><span class="o">,</span> <span class="s">"192.168.0.0"</span><span class="o">,</span> <span class="mi">28</span><span class="o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -406,32 +417,32 @@ the network topology that consists of three networks</p>
 <div class="listingblock">
 <div class="title">Create basic objects using TopologyBuilder</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">TopologyBuilder builder = <span style="color:#080;font-weight:bold">new</span> TopologyBuilder(<span style="color:#00D">4</span>)
-                .withCreator(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Docker</span><span style="color:#710">&quot;</span></span>)
-                .withRouters()
-                    .withName(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TRt</span><span style="color:#710">&quot;</span></span>)
-                    .createRouter()
-                    .withName(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">SRt</span><span style="color:#710">&quot;</span></span>)
-                    .createRouter()
-                    .withName(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MainRt</span><span style="color:#710">&quot;</span></span>)
-                    .withCorner(<span style="color:#069">true</span>)
-                    .createRouter()
-                    .addRouters()
-                .withNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tNet</span><span style="color:#710">&quot;</span></span>)
-                    .withIP(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.0.0</span><span style="color:#710">&quot;</span></span>)
-                    .withMask(<span style="color:#00D">28</span>)
-                    .create()
-                .withNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sNet</span><span style="color:#710">&quot;</span></span>)
-                    .withIP(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.16.0</span><span style="color:#710">&quot;</span></span>)
-                    .withMask(<span style="color:#00D">28</span>)
-                    .create()
-                .withNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bNet</span><span style="color:#710">&quot;</span></span>)
-                    .withIP(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">172.16.0.0</span><span style="color:#710">&quot;</span></span>)
-                    .withMask(<span style="color:#00D">16</span>)
-                    .create()
-                .withNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">iNet</span><span style="color:#710">&quot;</span></span>)
-                    .withInternet(<span style="color:#069">true</span>)
-                    .create()</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">TopologyBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TopologyBuilder</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withCreator</span><span class="o">(</span><span class="s">"Docker"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withRouters</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">withName</span><span class="o">(</span><span class="s">"TRt"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">createRouter</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">withName</span><span class="o">(</span><span class="s">"SRt"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">createRouter</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">withName</span><span class="o">(</span><span class="s">"MainRt"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withCorner</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">createRouter</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">addRouters</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withNetwork</span><span class="o">(</span><span class="s">"tNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withIP</span><span class="o">(</span><span class="s">"192.168.0.0"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withMask</span><span class="o">(</span><span class="mi">28</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withNetwork</span><span class="o">(</span><span class="s">"sNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withIP</span><span class="o">(</span><span class="s">"192.168.16.0"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withMask</span><span class="o">(</span><span class="mi">28</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withNetwork</span><span class="o">(</span><span class="s">"bNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withIP</span><span class="o">(</span><span class="s">"172.16.0.0"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withMask</span><span class="o">(</span><span class="mi">16</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withNetwork</span><span class="o">(</span><span class="s">"iNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withInternet</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">create</span><span class="o">()</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -442,50 +453,50 @@ api will set same route in opposite direction (We specify tNet &#8594; bNet and 
 <div class="listingblock">
 <div class="title">Set up the connection for Teacher network</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#339;font-weight:bold">int</span> routNeedCalc = topology.getNetworks().size() + <span style="color:#00D">1</span>;
-        builder  = builder.withRoutes()
-                    .withSourceNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tNet</span><span style="color:#710">&quot;</span></span>)
-                    .withDestNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sNet</span><span style="color:#710">&quot;</span></span>)
-                    .viaRouter((RouterImpl)<span style="color:#069">null</span>)
-                    .withCost(routNeedCalc)
-                    .addRoute()
-                    .withSourceNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tNet</span><span style="color:#710">&quot;</span></span>)
-                    .withDestNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bNet</span><span style="color:#710">&quot;</span></span>)
-                    .withCost(<span style="color:#00D">1</span>)
-                    .viaRouter(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">TRt</span><span style="color:#710">&quot;</span></span>)
-                    .addRoute()
-                    .withSourceNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">tNet</span><span style="color:#710">&quot;</span></span>)
-                    .withDestNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">iNet</span><span style="color:#710">&quot;</span></span>)
-                    .withCost(routNeedCalc)
-                    .viaRouter((RouterImpl)<span style="color:#069">null</span>)
-                    .addRoute</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">int</span> <span class="n">routNeedCalc</span> <span class="o">=</span> <span class="n">topology</span><span class="o">.</span><span class="na">getNetworks</span><span class="o">().</span><span class="na">size</span><span class="o">()</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="n">builder</span>  <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">withRoutes</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"tNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"sNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">viaRouter</span><span class="o">((</span><span class="nc">RouterImpl</span><span class="o">)</span><span class="kc">null</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="n">routNeedCalc</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">addRoute</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"tNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"bNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">viaRouter</span><span class="o">(</span><span class="s">"TRt"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">addRoute</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"tNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"iNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="n">routNeedCalc</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">viaRouter</span><span class="o">((</span><span class="nc">RouterImpl</span><span class="o">)</span><span class="kc">null</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">addRoute</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Set up the connection for Student network</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">        builder = builder.withSourceNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sNet</span><span style="color:#710">&quot;</span></span>)
-                    .withDestNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bNet</span><span style="color:#710">&quot;</span></span>)
-                    .withCost(<span style="color:#00D">1</span>)
-                    .viaRouter(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">SRt</span><span style="color:#710">&quot;</span></span>)
-                    .addRoute()
-                    .withSourceNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">sNet</span><span style="color:#710">&quot;</span></span>)
-                    .withDestNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">iNet</span><span style="color:#710">&quot;</span></span>)
-                    .withCost(routNeedCalc)
-                    .viaRouter((RouterImpl)<span style="color:#069">null</span>)
-                    .addRoute()</code></pre>
+<pre class="rouge highlight"><code data-lang="java">        <span class="n">builder</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"sNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"bNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">viaRouter</span><span class="o">(</span><span class="s">"SRt"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">addRoute</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"sNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"iNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="n">routNeedCalc</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">viaRouter</span><span class="o">((</span><span class="nc">RouterImpl</span><span class="o">)</span><span class="kc">null</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">addRoute</span><span class="o">()</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Set up connection for backbone network</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">    Topology topology = builder.withSourceNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">bNet</span><span style="color:#710">&quot;</span></span>)
-                    .withDestNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">iNet</span><span style="color:#710">&quot;</span></span>)
-                    .withCost(<span style="color:#00D">1</span>)
-                    .viaRouter(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">MainR</span><span style="color:#710">&quot;</span></span>)
-                    .buildRoute()
-                    .buildRoutes()
-                .build();</code></pre>
+<pre class="rouge highlight"><code data-lang="java">    <span class="nc">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"bNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"iNet"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">viaRouter</span><span class="o">(</span><span class="s">"MainR"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">buildRoute</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">buildRoutes</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -514,9 +525,9 @@ After all of those commands are executed, our topology is ready to be deployed.<
 <div class="listingblock">
 <div class="title">Deployment of topology</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">Manager networkManager = PatriotHub.getInstance().getManager();
-networkManager.setControllers(<span style="color:#0a8;font-weight:bold">Arrays</span>.asList(<span style="color:#080;font-weight:bold">new</span> DockerController()));
-networkManager.deploy(topology);</code></pre>
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Manager</span> <span class="n">networkManager</span> <span class="o">=</span> <span class="nc">PatriotHub</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getManager</span><span class="o">();</span>
+<span class="n">networkManager</span><span class="o">.</span><span class="na">setControllers</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="nc">DockerController</span><span class="o">()));</span>
+<span class="n">networkManager</span><span class="o">.</span><span class="na">deploy</span><span class="o">(</span><span class="n">topology</span><span class="o">);</span></code></pre>
 </div>
 </div>
 </div>
@@ -553,32 +564,32 @@ into the simulated environment. In the current state the basic prerequisite is, 
 <div class="listingblock">
 <div class="title">Deployment of an application into the simulated environment</div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">    Manager networkManager = PatriotHub.getInstance().getManager();
-    Topology topology = <span style="color:#080;font-weight:bold">new</span> TopologyBuilder(<span style="color:#00D">2</span>)
-                .withRouters()
-                .withName(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">R1</span><span style="color:#710">&quot;</span></span>)
-                .addRouters()
-                .withNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">N1</span><span style="color:#710">&quot;</span></span>)
-                    .withIP(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.0.0</span><span style="color:#710">&quot;</span></span>)
-                    .withMask(<span style="color:#00D">28</span>)
-                .create()
-                .withNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">N2</span><span style="color:#710">&quot;</span></span>)
-                    .withIP(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">192.168.16.0</span><span style="color:#710">&quot;</span></span>)
-                    .withMask(<span style="color:#00D">28</span>)
-                .create()
-                .withRoutes()
-                    .withSourceNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">N1</span><span style="color:#710">&quot;</span></span>)
-                    .withDestNetwork(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">N2</span><span style="color:#710">&quot;</span></span>)
-                    .withCost(<span style="color:#00D">1</span>)
-                    .viaRouter(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">R1</span><span style="color:#710">&quot;</span></span>)
-                    .addRoute()
-                .buildRoutes()
-                .build();
-        networkManager.setControllers(<span style="color:#0a8;font-weight:bold">Arrays</span>.asList(<span style="color:#080;font-weight:bold">new</span> DockerController());
-        networkManager.deploy(topology);
-        Application app = <span style="color:#080;font-weight:bold">new</span> Application(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Generator</span><span style="color:#710">&quot;</span></span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">Docker</span><span style="color:#710">&quot;</span></span>);
-        networkManager.deployDeviceToNetwork(app,
-        topology.getNetworks().get(<span style="color:#00D">1</span>), topology, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">app-1.0-SNAPSHOT</span><span style="color:#710">&quot;</span></span>);</code></pre>
+<pre class="rouge highlight"><code data-lang="java">    <span class="nc">Manager</span> <span class="n">networkManager</span> <span class="o">=</span> <span class="nc">PatriotHub</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getManager</span><span class="o">();</span>
+    <span class="nc">Topology</span> <span class="n">topology</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TopologyBuilder</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">withRouters</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withName</span><span class="o">(</span><span class="s">"R1"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">addRouters</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withNetwork</span><span class="o">(</span><span class="s">"N1"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withIP</span><span class="o">(</span><span class="s">"192.168.0.0"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withMask</span><span class="o">(</span><span class="mi">28</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withNetwork</span><span class="o">(</span><span class="s">"N2"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withIP</span><span class="o">(</span><span class="s">"192.168.16.0"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withMask</span><span class="o">(</span><span class="mi">28</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">create</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">withRoutes</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">withSourceNetwork</span><span class="o">(</span><span class="s">"N1"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withDestNetwork</span><span class="o">(</span><span class="s">"N2"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">withCost</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">viaRouter</span><span class="o">(</span><span class="s">"R1"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">addRoute</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">buildRoutes</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+        <span class="n">networkManager</span><span class="o">.</span><span class="na">setControllers</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="nc">DockerController</span><span class="o">());</span>
+        <span class="n">networkManager</span><span class="o">.</span><span class="na">deploy</span><span class="o">(</span><span class="n">topology</span><span class="o">);</span>
+        <span class="nc">Application</span> <span class="n">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Application</span><span class="o">(</span><span class="s">"Generator"</span><span class="o">,</span> <span class="s">"Docker"</span><span class="o">);</span>
+        <span class="n">networkManager</span><span class="o">.</span><span class="na">deployDeviceToNetwork</span><span class="o">(</span><span class="n">app</span><span class="o">,</span>
+        <span class="n">topology</span><span class="o">.</span><span class="na">getNetworks</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">topology</span><span class="o">,</span> <span class="s">"app-1.0-SNAPSHOT"</span><span class="o">);</span></code></pre>
 </div>
 </div>
 </div>

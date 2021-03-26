@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PatrIoT Framework Latest | Advanced topics | Building sources</title>
+
+  <!-- Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+
+  <link href="../../latest/_images/favicon-32x32.png" rel="shortcut icon" type="text/css">
+  <!--[if IE]><link rel="shortcut icon" href="../../latest/_images/favicon.ico"><![endif]-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css" crossorigin="anonymous" integrity="sha384-zhIsEafzyQWHSoMCQ4BfT8ZlRXQyIFwAHAJn32PNdsb8n6tVysGZSLpEEIvCskw4">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js" crossorigin="anonymous" integrity="sha384-yDKe+FHcWYXuC4QP8bZULyLbkQWMpTkyk4v/fJi+7MwzWrT+SFIP5wFYQrWu5L+j"></script>
+  <script type='text/javascript'>
+      hljs.initHighlightingOnLoad();
+  </script>
+  <meta content="AsciiBinder" name="application-name">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+	      <a class="navbar-brand" href="http://www.patriot-framework.io/">
+		      <img alt="PatrIoTFramefork" src="../../latest/_images/PATRIOT_logo_horizontal.svg" height="30">
+	      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#main">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#features">Features</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="../welcome/index.html">Documentation</a>
+            </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../javadocs/index.html">JavaDocs</a>
+        </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html#contact">Get in Touch</a>
+            </li>
+        </ul></div>
+      </div>
+    </nav>	
+   <div class="container main-cont">
+    <p class="d-md-none toggle-nav pull-left">
+      <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="offcanvas">Toggle nav</button>
+    </p>
+    <ol class="breadcrumb bg-white">
+      <li class="d-block d-md-none breadcrumb-item">
+        <h4 class="red-text">Documentation</h4>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item">
+        <a href="https://patriot-framework.io/docs">Home</a>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item">
+        <a href="../welcome/index.html">PatrIoT Framework Latest</a>
+      </li>
+      <li class="d-none d-md-block breadcrumb-item active">
+        <a href="../docs/building-sources.html">Advanced topics</a>
+      </li>
+      
+      <li class="d-none d-md-block breadcrumb-item active">
+        Building sources
+      </li>
+    </ol>
+    <div class="row row-offcanvas row-offcanvas-left">
+      <div class="col-xs-8 col-sm-5 col-md-3 sidebar sidebar-offcanvas">
+        <ul class="nav nav-sidebar">
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup0">
+        <span id="tgSpan0" class="fa fa-angle-right"></span>PatrIoT Framework
+      </a>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../welcome/index.html">Welcome</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup1">
+        <span id="tgSpan1" class="fa fa-angle-right"></span>Getting Started
+      </a>
+      <ul id="topicGroup1" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/framework.html">General information</a></li>
+            <li><a class="" href="../docs/getting-started.html">Getting started guide</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup2">
+        <span id="tgSpan2" class="fa fa-angle-right"></span>Framework Base
+      </a>
+      <ul id="topicGroup2" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/patriot-api.html">PatrIoT API</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup3">
+        <span id="tgSpan3" class="fa fa-angle-right"></span>Network Simulation
+      </a>
+      <ul id="topicGroup3" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/network-sim.html">Network simulation</a></li>
+            <li><a class="" href="../docs/multihost.html">Support for multihost</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup4">
+        <span id="tgSpan4" class="fa fa-angle-right"></span>Data Generation
+      </a>
+      <ul id="topicGroup4" class="collapse  list-unstyled">
+            <li><a class="" href="../docs/data-generator.html">Data Generator</a></li>
+      </ul>
+    </li>
+    <li class="nav-header">
+      <a class="" href="#;" data-toggle="collapse" data-target="#topicGroup5">
+        <span id="tgSpan5" class="fa fa-angle-down"></span>Advanced topics
+      </a>
+      <ul id="topicGroup5" class="collapse show in list-unstyled">
+            <li><a class="active" href="../docs/building-sources.html">Building sources</a></li>
+            <li><a class="" href="../docs/smarthome-guide.html">Smart home tests</a></li>
+      </ul>
+    </li>
+</ul>
+      </div>
+      <div class="col-xs-12 col-sm-9 col-md-9 main">
+        <div class="page-header">
+          <h2>Building PatrIoT framework from sources</h2>
+        </div>
+        <div class="sect1">
+<h2 id="building-patriot-framework-from-sources"><a class="anchor" href="#building-patriot-framework-from-sources"></a>Building PatrIoT framework from sources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For development purposes it might be necessary to obtain development versions
+of PatrIoT framework which will enable test developer to use new unreleased versions
+of framework or to modify the source code to achieve specific behaviour of the framework.</p>
+</div>
+<div class="paragraph">
+<p>In order to obtain the source code of the framework modules, specifically:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>patriot-api</code> java source code</p>
+</li>
+<li>
+<p><code>docker-network-simulator</code> java source code</p>
+</li>
+<li>
+<p><code>patriot-data-generator</code> java source code</p>
+</li>
+<li>
+<p><code>patriot-router</code> utilitary source codes in python and go for internal network routing.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="building-java-sources"><a class="anchor" href="#building-java-sources"></a>Building java sources</h3>
+<div class="paragraph">
+<p>In all of the java source codes the test developer needs to check the artifact version in the <code>pom.xml</code>
+file within such module, which for the development version should contain version similar to
+<code>3.0.X-SNAPSHOT</code>.</p>
+</div>
+<div class="paragraph">
+<p>For the situation when at-hoc change to the released verion is needed, the developer needs to change the
+<code>project.version</code> to custom string e.g. <code>3.0.0-DEVEL</code> to all of the java modules see following snippet:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example modification to project pom.xml</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+   <span class="nt">&lt;groupId&gt;</span>io.patriot-framework<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>patriot-api<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>2.0.1<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+   <span class="nt">&lt;groupId&gt;</span>io.patriot-framework<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>patriot-api<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>3.0.1-SNAPSHOT<span class="nt">&lt;/version&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since all of the sources do depend on each other, the compilation of artifacts must be done in precise order
+to meet all the dependencies between submodules, such order is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>patriot-data-generator</code> doesn&#8217;t have dependency on other modules, so it must be built first.</p>
+</li>
+<li>
+<p><code>patriot-api</code> depends on Data Generator module, so it must be built second.</p>
+</li>
+<li>
+<p><code>docker-network-simulator</code> implements <code>patriot-api</code> and hence it must be built as last.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With this order in mind the actual compilation can be achieved by running
+following shell script. Assume that all of the sources are available in the directory <code>patriot-src</code> and
+named as seen above:</p>
+</div>
+<div class="listingblock">
+<div class="title">Snippet of shell script to build all of the sources</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="k">for </span>k <span class="k">in </span>patriot-data-generator patriot-api docker-network-simulator<span class="p">;</span> <span class="k">do
+    </span><span class="nb">cd</span> <span class="nv">$k</span>
+    mvn clean <span class="nb">install
+</span><span class="k">done</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once all of the sources are compiled and available in the local maven repository test developer needs
+to change the version of PatrIoT framework in the project containing the developed tests:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of updated dependency to development version</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+         <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+   <span class="nt">&lt;groupId&gt;</span>my-group<span class="nt">&lt;/groupId&gt;</span>
+   <span class="nt">&lt;artifactId&gt;</span>my-simple-test<span class="nt">&lt;/artifactId&gt;</span>
+   <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+
+   <span class="nt">&lt;properties&gt;</span>
+      <span class="nt">&lt;junit.jupiter.version&gt;</span>5.4.0<span class="nt">&lt;/junit.jupiter.version&gt;</span>
+      <span class="nt">&lt;patriot.framework.version&gt;</span>3.0.1-SNAPSHOT<span class="nt">&lt;/patriot.framework.version&gt;</span>
+   <span class="nt">&lt;/properties&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="building-router-docker-image"><a class="anchor" href="#building-router-docker-image"></a>Building router docker image</h3>
+<div class="paragraph">
+<p>The <code>patriot-router</code> component is principal part of network simulation and as such
+must be present to enable ability of PatrIoT framework to control the simulated environment.
+In order to build it, following command must be executed within <code>patriot-router</code> directory.</p>
+</div>
+<div class="listingblock">
+<div class="title">Building router image</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nv">$ </span><span class="nb">cd </span>patriot-router
+<span class="nv">$ </span>docker build <span class="nb">.</span> <span class="nt">--tag</span> patriot-router</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the image is built, it can be used by PatrIoT framework by setting property <code>io.patriot_framework.router</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">patriot.properties content</div>
+<div class="content">
+<pre class="rouge highlight"><code>io.patriot_framework.router=patriot-router</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-custom-base-image"><a class="anchor" href="#creating-custom-base-image"></a>Creating custom base image</h3>
+<div class="paragraph">
+<p>To deploy any containerized application with full PatrIoT capabilities - e.g.
+advanced network control - some modifications to the base image are necessary.
+For Java applications there is base image <code>patriotframework/simulator-base</code> which
+can be built by running following command.</p>
+</div>
+<div class="listingblock">
+<div class="title">Building Java 1.8 base image</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="shell"><span class="nv">$ </span><span class="nb">cd </span>patriot-router
+<span class="nv">$ </span>docker build <span class="nt">-f</span> base-image/Dockerfile <span class="nb">.</span> <span class="nt">--tag</span> java-baseimage</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With existing base image the tested java application can be containerized by creation
+of new image which is built on top of the <code>java-baseimage</code>. Since all of the runtime dependencies
+are already contained within the image, the only one thing necessary is to put full jar file with
+built Java application into the image and set <code>CMD</code> property of container image.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example Dockerfile for containerized Java application</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="Dockerfile">FROM java-baseimage
+COPY app.jar /app.jar
+CMD java -jar /app.jar</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="building-image-with-different-base-image-and-customizations"><a class="anchor" href="#building-image-with-different-base-image-and-customizations"></a>Building image with different base image and customizations</h4>
+<div class="paragraph">
+<p>The base image doesn&#8217;t need to be built with Java, but can be created from any other linux
+base image with any customizations needed, if following prerequisites can be met:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The base image is created for linux distributions and based on linux.</p>
+</li>
+<li>
+<p>User can extend the image by installation of images.</p>
+</li>
+<li>
+<p>The golang package is available in version 1.11 at least.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once all of those requirements are met, the Dockerfile can be produced to extend the base image
+with netowrk control capabilities. The steps necessary are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Locate place where docker build context will be executed - typically directory where Dockerfile would be placed.</p>
+</li>
+<li>
+<p>Copy whole directory  <code>patriot-router/api</code> directory to the build context directory</p>
+</li>
+<li>
+<p>Find packages for</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>golang in version 1.11 or higher</p>
+</li>
+<li>
+<p>iptables</p>
+</li>
+<li>
+<p>iputils or package providing similar functions</p>
+</li>
+<li>
+<p>git</p>
+</li>
+<li>
+<p>Standard C library - development files</p>
+</li>
+<li>
+<p>Make</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Extend Dockerfile to install those packages.</p>
+</li>
+<li>
+<p>Find directory, which contains go installation and export it as GOROOT environment variable</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Afther those steps following snippet must be added to the Dockerfile to install api for network control.</p>
+</div>
+<div class="listingblock">
+<div class="title">Neccessary content of Dockerfile to build network control api.</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="Dockerfile">ENV GOPATH=/go
+ENV PATH=/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jdk/bin
+
+RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
+
+RUN go get -d -v github.com/olivere/elastic &amp;&amp; \
+go get -d -v github.com/sirupsen/logrus &amp;&amp; \
+go get -d -v gopkg.in/sohlich/elogrus.v3 &amp;&amp;\
+go get -d -v github.com/abbot/go-http-auth &amp;&amp; \
+go get -d -v github.com/gorilla/handlers &amp;&amp; \
+go get -d -v github.com/gorilla/mux &amp;&amp;\
+go get -d -v github.com/oxalide/go-iptables/iptables &amp;&amp;\
+go get -d -v github.com/seatgeek/logrus-gelf-formatter
+
+WORKDIR /go/src
+ADD api/iprouteRESt /go/src/api/iprouteRESt
+ADD api/iptables-api /go/src/api/iptables-api
+ADD api/iproute2 /go/src/api/iproute2
+WORKDIR /
+
+WORKDIR /go/src/api/iptables-api/
+RUN go build  -o /api/iptables-api main.go
+WORKDIR /go/src/api/iprouteRESt/
+RUN go build -o /api/iprouteRESt Controller.go</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As last step it is necessary to ensure that <code>iprouteRESt</code> will be started with the container
+as separate proces within it. In case, that your application doesn&#8217;t need custom entrypoint as
+a decorator over executed command, then following shell script can be copied to the container image
+and configured as entrypoint.</p>
+</div>
+<div class="listingblock">
+<div class="title">Shell script to start daemon for network controll</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash"><span class="c">#!/bin/bash</span>
+<span class="c"># Bash script for starting all necessary daemons for app gateway</span>
+
+
+<span class="k">function </span>stop_daemons<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">"Stopping daemons"</span>
+    <span class="nb">kill</span> <span class="nt">-TERM</span> <span class="s2">"</span><span class="nv">$REST_PID</span><span class="s2">"</span>
+    <span class="nb">kill</span> <span class="nt">-TERM</span> <span class="s2">"</span><span class="nv">$API_PID</span><span class="s2">"</span>
+<span class="o">}</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">==</span> <span class="s1">'/api/iptables-api'</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"Starting daemons"</span>
+    <span class="nb">trap</span> <span class="s1">'stop_daemons'</span> EXIT
+
+    /api/iprouteRESt &amp;
+    <span class="nb">export </span><span class="nv">REST_PID</span><span class="o">=</span><span class="nv">$!</span>
+
+    <span class="nb">exec</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span> &amp;
+    <span class="nb">export </span><span class="nv">API_PID</span><span class="o">=</span><span class="nv">$!</span>
+
+    <span class="nb">wait</span> <span class="nv">$API_PID</span>
+
+<span class="k">else</span>
+    /api/iprouteRESt &amp;
+    <span class="nb">export </span><span class="nv">REST_PID</span><span class="o">=</span><span class="nv">$!</span>
+    <span class="nb">exec</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+<span class="k">fi</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In case that your application needs a custom entrypoint, then it must be extended to
+start <code>/api/iprouteRESt</code> as a background process and it must be able to kill it later,
+when the main process is being terminated. If the child process woudln&#8217;t be terminated,
+the container won&#8217;t stop properly, because docker-daemon expects all processes to end.</p>
+</div>
+<div class="paragraph">
+<p>For bash based entrypoint it would be enough to ensure that following command is executed
+upon start of container.</p>
+</div>
+<div class="listingblock">
+<div class="title">iprouteRESt execution in bash</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">/api/iprouteRESt &amp;
+<span class="nb">export </span><span class="nv">REST_PID</span><span class="o">=</span><span class="nv">$!</span>
+<span class="nb">trap</span> <span class="s2">"kill -TERM </span><span class="nv">$REST_PID</span><span class="s2">"</span> EXIT</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+   <script src="../../latest/_javascripts/bootstrap-offcanvas.js" type="text/javascript"></script>
+   <script type="text/javascript">
+       /*<![CDATA[*/
+       $(document).ready(function() {
+           $("[id^='topicGroup']").on('show.bs.collapse', function (event) {
+               if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+                   $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+               }
+           });
+           $("[id^='topicGroup']").on('hide.bs.collapse', function (event) {
+               if (!($(event.target).attr('id').match(/^topicSubGroup/))) {
+                   $(this).parent().find("[id^='tgSpan']").toggleClass("fa-angle-right fa-angle-down");
+               }
+           });
+           $("[id^='topicSubGroup']").on('show.bs.collapse', function () {
+               $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+           });
+           $("[id^='topicSubGroup']").on('hide.bs.collapse', function () {
+               $(this).parent().find("[id^='sgSpan']").toggleClass("fa-caret-right fa-caret-down");
+           });
+       });
+       /*]]>*/
+   </script>
+</body>
+</html>
